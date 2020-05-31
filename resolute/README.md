@@ -364,7 +364,7 @@ Now, the plan is :
 #### Warning
 Executing this plan will probably crash the DNS service: using DLLs that do not conform to the plugin requirements is not stealthy and this type of activity probably will get picked up by defenders really quickly unless you can restore the DNS service immediately.
 Of course, doing this in a CTF is fine, but think twice before doing anything in a real life assessment. Your customer might become stealthy when it comes to pay you, at least stealthier than you when exploiting his network.
-IPPSec explains very well evreything about the exploit and how to do to not crash the server [here](https://www.youtube.com/watch?v=8KJebvmd1Fk&t=3183s).
+[IppSec](https://www.hackthebox.eu/home/users/profile/3769) explains very well everything about the exploit and how to do to not crash the server [here](https://www.youtube.com/watch?v=8KJebvmd1Fk&t=3183s).
 
 #### The payload
 A classic reverse tcp shell will work fine:
