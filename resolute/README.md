@@ -12,8 +12,9 @@
 3.1- https://github.com/flast101/HTB-writeups/tree/master/resolute#bruteforcing-credentials   
 3.2- https://github.com/flast101/HTB-writeups/tree/master/resolute#getting-usertxt   
 4- https://github.com/flast101/HTB-writeups/tree/master/resolute#privilege-escalation   
-4.1- https://github.com/flast101/HTB-writeups/tree/master/resolute#post-compromise-enumeration 
+4.1- https://github.com/flast101/HTB-writeups/tree/master/resolute#post-compromise-enumeration   
 4.2- https://github.com/flast101/HTB-writeups/tree/master/resolute#new-account-enumeration  
+4.3-
 
 ## 2- Enumeration
 ### 2.1- nmap scan
@@ -313,7 +314,7 @@ PS>CommandInvocation(Invoke-Expression): "Invoke-Expression"
 
 
 
-### 4.3- New Account Enumeration
+### 4.2- New Account Enumeration
 
 Maybe Ryan's account has more privileges than Melanie's. We login as `ryan` using `Evil-WinRM` and try to figure this out:
 ~~~
@@ -347,7 +348,7 @@ Let's google what we can do from being a DNS Admin. We can find several links ab
 - From DnsAdmins to SYSTEM to Domain Compromise: https://ired.team/offensive-security-experiments/active-directory-kerberos-abuse/from-dnsadmins-to-system-to-domain-compromise
 
 
-### 4.4- Post-Compromise Exploitation
+### 4.3- Post-Compromise Exploitation
 
 #### Plan
 Now, the plan is :
