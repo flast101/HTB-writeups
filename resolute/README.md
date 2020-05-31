@@ -5,16 +5,19 @@
 ![card](images/card.png "Resolute")
 
 ### Summary
-2- https://github.com/flast101/HTB-writeups/tree/master/resolute#enumeration   
-2.1- https://github.com/flast101/HTB-writeups/tree/master/resolute#nmap-scan   
-2.2- https://github.com/flast101/HTB-writeups/tree/master/resolute#active-directory-enumeration   
-3- https://github.com/flast101/HTB-writeups/tree/master/resolute#exploitation   
-3.1- https://github.com/flast101/HTB-writeups/tree/master/resolute#bruteforcing-credentials   
-3.2- https://github.com/flast101/HTB-writeups/tree/master/resolute#getting-usertxt   
-4- https://github.com/flast101/HTB-writeups/tree/master/resolute#privilege-escalation   
-4.1- https://github.com/flast101/HTB-writeups/tree/master/resolute#post-compromise-enumeration   
-4.2- https://github.com/flast101/HTB-writeups/tree/master/resolute#new-account-enumeration  
-4.3-
+
+2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#enumeration)   
+2.1- [nmap scan](https://github.com/flast101/HTB-writeups/tree/master/resolute#nmap-scan)   
+2.2- [Active Directory Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#active-directory-enumeration)   
+
+3- [Exploitation](https://github.com/flast101/HTB-writeups/tree/master/resolute#exploitation)   
+3.1- [Bruteforcing Credentials](https://github.com/flast101/HTB-writeups/tree/master/resolute#bruteforcing-credentials)   
+3.2- [Getting user.txt](https://github.com/flast101/HTB-writeups/tree/master/resolute#getting-usertxt)   
+
+4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/resolute#privilege-escalation)   
+4.1- [Post-Compromise Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#post-compromise-enumeration)   
+4.2- [New Account Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#new-account-enumeration)  
+4.3- [Post-Compromise Exploitation](https://github.com/flast101/HTB-writeups/tree/master/resolute#43--post-compromise-exploitation)
 
 ## 2- Enumeration
 ### 2.1- nmap scan
@@ -361,7 +364,7 @@ Now, the plan is :
 #### Warning
 Executing this plan will probably crash the DNS service: using DLLs that do not conform to the plugin requirements is not stealthy and this type of activity probably will get picked up by defenders really quickly unless you can restore the DNS service immediately.
 Of course, doing this in a CTF is fine, but think twice before doing anything in a real life assessment. Your customer might become stealthy when it comes to pay you, at least stealthier than you when exploiting his network.
-IPPSec explains very well evreything about the exploit and how to do to not crash the server here: https://www.youtube.com/watch?v=8KJebvmd1Fk&t=3183s
+IPPSec explains very well evreything about the exploit and how to do to not crash the server [here](https://www.youtube.com/watch?v=8KJebvmd1Fk&t=3183s).
 
 #### The payload
 A classic reverse tcp shell will work fine:
