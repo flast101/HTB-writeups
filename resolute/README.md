@@ -1,14 +1,22 @@
 
 # Resolute
-## Overview
+## 1- Overview
 
 ![card](images/card.png "Resolute")
 
-## Summary
+### Summary
+2- https://github.com/flast101/HTB-writeups/tree/master/resolute#enumeration   
+2.1- https://github.com/flast101/HTB-writeups/tree/master/resolute#nmap-scan   
+2.2- https://github.com/flast101/HTB-writeups/tree/master/resolute#active-directory-enumeration   
+3- https://github.com/flast101/HTB-writeups/tree/master/resolute#exploitation   
+3.1- https://github.com/flast101/HTB-writeups/tree/master/resolute#bruteforcing-credentials   
+3.2- https://github.com/flast101/HTB-writeups/tree/master/resolute#getting-usertxt   
+4- https://github.com/flast101/HTB-writeups/tree/master/resolute#privilege-escalation   
+4.1- https://github.com/flast101/HTB-writeups/tree/master/resolute#post-compromise-enumeration 
+4.2- https://github.com/flast101/HTB-writeups/tree/master/resolute#new-account-enumeration  
 
-
-## Enumeration
-### nmap scan
+## 2- Enumeration
+### 2.1- nmap scan
 As usual, we begin with a nmap scan:
 ~~~
 root@kali:~# nmap --reason -Pn -A --osscan-guess --version-all 10.10.10.169
@@ -69,7 +77,8 @@ Service detection performed. Please report any incorrect results at https://nmap
 The important services we found here are : DNS, RPC, SMB, Kerberos, and LDAP.
 There is obviously an Active Directory about which we already have information: the box is **resolute.megabank.local** and its domain name is **megabank.local**.
 
-### Active Directory Enumeration
+
+### 2.2- Active Directory Enumeration
 Let's begin with using `ldpsearch` to grab general information:
 ~~~
 root@kali:~# ldapsearch -h 10.10.10.169 -x -s base namingcontexts
@@ -151,8 +160,8 @@ We may have an account named "marko" with the password "Welcome123!".
 
 
 
-## Exploitation
-### Bruteforcing Credentials
+## 3- Exploitation
+### 3.1- Bruteforcing Credentials
 However,  if we try to log in with these creds, it does not work. It must be a “welcome” password that has to be changed when the new user login. And he changed it. However, another user might have forgotten to change it and still has it active.
 
 Let's make a user list “users.txt” and test it on the smb service :
@@ -175,7 +184,7 @@ User: <span style="color:green">melanie</span>
 Password: <span style="color:green">Welcome123!</span>
 
 
-### Getting user.txt
+### 3.2- Getting user.txt
 It may be possible now to get a shell on the target. We can use `Evil-WinRM` :
 
 ~~~
@@ -189,8 +198,8 @@ Info: Establishing connection to remote endpoint
 
 
 
-## Privilege Escalation
-### Post-Compromise Enumeration
+## 4- Privilege Escalation
+### 4.1- Post-Compromise Enumeration
 
 First, we must know who we are.
 
@@ -304,7 +313,7 @@ PS>CommandInvocation(Invoke-Expression): "Invoke-Expression"
 
 
 
-### New Account Enumeration
+### 4.3- New Account Enumeration
 
 Maybe Ryan's account has more privileges than Melanie's. We login as `ryan` using `Evil-WinRM` and try to figure this out:
 ~~~
@@ -338,7 +347,7 @@ Let's google what we can do from being a DNS Admin. We can find several links ab
 - From DnsAdmins to SYSTEM to Domain Compromise: https://ired.team/offensive-security-experiments/active-directory-kerberos-abuse/from-dnsadmins-to-system-to-domain-compromise
 
 
-### Exploitation
+### 4.4- Post-Compromise Exploitation
 
 #### Plan
 Now, the plan is :
