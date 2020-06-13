@@ -310,7 +310,9 @@ We have new credentials **mhope:4n0therD4y@n0th3r$**. What can we do with them ?
 ![user.txt](images/user-txt.png "user.txt")
 
 ## 4- Privilege Escalation
-### 4.1- Post-Compromise Enumeration
+
+### 4.1- Post-Compromise Enumeration  
+
 We must gather more information about our user **mhope**:
 ~~~
 *Evil-WinRM* PS C:\Users\mhope\desktop> whoami /all
@@ -365,7 +367,7 @@ _Azure AD Connect Database Exploit (Priv Esc)_: https://vbscrub.com/2020/01/14/a
 This article also reveals this interesting Github repo:   
 _Azure AD Connect password extraction_: https://github.com/fox-it/adconnectdump
 
-### 4.3- Post-Compromise Exploitation
+### 4.2- Post-Compromise Exploitation
 Let's try it.     
 We download **AdDecrypt.exe** and **mcrypt.dll** on the target. AS indicated, these two files must be placed in the directory where we will launch the exploit. Once done, we have:
 ~~~
