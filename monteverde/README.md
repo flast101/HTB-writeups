@@ -369,7 +369,7 @@ _Azure AD Connect password extraction_: https://github.com/fox-it/adconnectdump
 
 ### 4.2- Post-Compromise Exploitation
 Let's try it.     
-We download **AdDecrypt.exe** and **mcrypt.dll** on the target. AS indicated, these two files must be placed in the directory where we will launch the exploit. Once done, we have:
+We download **AdDecrypt.exe** and **mcrypt.dll** on the target. As indicated, these two files must be placed in the directory where we will launch the exploit. Once done, we have:
 ~~~
 *Evil-WinRM* PS C:\Program Files\Microsoft Azure AD Sync\Bin> Dir -Force C:\Users\mhope\Documents\
 
