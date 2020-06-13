@@ -361,7 +361,7 @@ Kerberos support for Dynamic Access Control on this device has been disabled.
 ~~~
 Interesting to notice that mhope is member of the **"Azure Admins"** group and we found its credentials in the **"azure.xml"** file.
 
-I we google the words “Azure Admins privesc”, we find several links. One of those was released by one of our famous active members [VbScrub](https://www.hackthebox.eu/home/users/profile/158833):    
+If we google the words “Azure Admins privesc”, we find several links. One of those was released by one of our famous active members [VbScrub](https://www.hackthebox.eu/home/users/profile/158833):    
 _Azure AD Connect Database Exploit (Priv Esc)_: https://vbscrub.com/2020/01/14/azure-ad-connect-database-exploit-priv-esc/
 
 This article also reveals this interesting Github repo:   
