@@ -16,7 +16,7 @@ Writeup release: 31 May 2020
 3.1- [Bruteforcing Credentials](https://github.com/flast101/HTB-writeups/tree/master/resolute#31--bruteforcing-credentials)   
 3.2- [Getting user.txt](https://github.com/flast101/HTB-writeups/tree/master/resolute#32--getting-usertxt)   
 
-**4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/resolute#4--privilege-escalation)*   
+**4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/resolute#4--privilege-escalation)**   
 4.1- [Post-Compromise Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#41--post-compromise-enumeration)   
 4.2- [New Account Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#42--new-account-enumeration)  
 4.3- [Post-Compromise Exploitation](https://github.com/flast101/HTB-writeups/tree/master/resolute#43--post-compromise-exploitation)
