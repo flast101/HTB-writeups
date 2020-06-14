@@ -399,3 +399,5 @@ And now, this is time for execution. We must execute the exploit in the director
 We finally have our Administrator credentials **"administrator:d0m@in4dminyeah!"**. We just have to login as **Administrator** and it is done:
 
 ![root.txt](images/root-txt.png "root.txt")
+
+<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">
