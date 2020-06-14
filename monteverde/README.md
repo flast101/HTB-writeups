@@ -396,7 +396,7 @@ Notice that I first tried BloodHound, but unsuccessfully...
 And now, this is time for execution. We must execute the exploit in the directory **"C:\Program Files\Microsoft Azure AD Sync\Bin"**, and it works fine:
 ![AdDecrypt](images/addecrypt.png "AdDecrypt.exe")
 
-We finally have our Administrator credentials **"administrator:d0m@in4dminyeah!"**. We just have to login as **Administrator** and it is done:
+We finally have our Administrator credentials **"administrator:d0m@xxxxxxxxxxxx"**. We just have to login as **Administrator** and it is done:
 
 ![root.txt](images/root-txt.png "root.txt")
 
