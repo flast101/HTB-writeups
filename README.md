@@ -6,3 +6,5 @@ Here you will find walkthroughs to root machines on the [HackTheBox](https://www
 - [Sauna](https://github.com/flast101/HTB-writeups/tree/master/sauna) : soon...
 
 Happy hacking !:blush:
+
+<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">
