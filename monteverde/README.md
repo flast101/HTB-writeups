@@ -1,7 +1,7 @@
 # Monteverde
 ## 1- Overview
 
-[![card](images/card.png "Monteverde")]https://www.hackthebox.eu/home/machines/profile/223   
+[![card](images/card.png "Monteverde")](https://www.hackthebox.eu/home/machines/profile/223)   
 Retire: 13 June 2020   
 Writeup: 13 June 2020
 
