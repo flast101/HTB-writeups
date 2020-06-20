@@ -17,7 +17,7 @@ Writeup: 20 June 2020
 **4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/servmon#4--privilege-escalation)**   
 4.1- [Post-Compromise Enumeration](https://github.com/flast101/HTB-writeups/tree/master/servmon#41--post-compromise-enumeration)        
 4.2- [Post-Compromise Exploitation Part 1 - Web Server Connection](https://github.com/flast101/HTB-writeups/tree/master/servmon#42--post-compromise-exploitation-part-1---web-server-connection)       
-4.3- [Post-Compromise Exploitation Part 2 - Script Execution](https://github.com/flast101/HTB-writeups/tree/master/servmon#43--post-compromise-exploitation-part-1---script-execution)        
+4.3- [Post-Compromise Exploitation Part 2 - Script Execution](https://github.com/flast101/HTB-writeups/tree/master/servmon#43--post-compromise-exploitation-part-2---script-execution)        
 4.4- [Root.txt](https://github.com/flast101/HTB-writeups/tree/master/servmon#44--root.txt)
 
 ## 2- Enumeration
