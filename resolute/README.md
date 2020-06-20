@@ -2,7 +2,7 @@
 # Resolute
 ## 1- Overview
 
-![card](images/card.png "Resolute")      
+[![card](images/card.png "Resolute")](https://www.hackthebox.eu/home/machines/profile/220)      
 Retire: 30 May 2020     
 Writeup: 31 May 2020      
 
