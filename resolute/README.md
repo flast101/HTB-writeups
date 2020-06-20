@@ -2,9 +2,9 @@
 # Resolute
 ## 1- Overview
 
-![card](images/card.png "Resolute")
-Retire: 30 May 2020   
-Writeup: 31 May 2020
+![card](images/card.png "Resolute")      
+Retire: 30 May 2020     
+Writeup: 31 May 2020      
 
 ### Summary
 
