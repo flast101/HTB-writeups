@@ -195,7 +195,7 @@ The creds we were looking for are **nadine:L1k3B1gBut7s@W0rk**   :unlock:
 ![user-txt](images/user-txt.png "user-txt")
 
 
-## 4 Privilege Escalation
+## 4- Privilege Escalation
 ### 4.1- Post-Compromise Enumeration
 Before using a privesc reporting tool like `winPEAS`, I usually check around if there is nothing obvious.     
 I first look at the account permissions with **"whoami /all"** command, but nothing particular here. Nadine has a low-privileged account.     
