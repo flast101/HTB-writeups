@@ -1,8 +1,7 @@
-
 # Monteverde
 ## 1- Overview
 
-![card](images/card.png "Monteverde")   
+[![card](images/card.png "Monteverde")]https://www.hackthebox.eu/home/machines/profile/223   
 Retire: 13 June 2020   
 Writeup: 13 June 2020
 
@@ -400,6 +399,6 @@ We finally have our Administrator credentials **"administrator:xxxxxxxxxxxxxxxx"
 
 ![root.txt](images/root-txt.png "root.txt")
 
-Happy hacking ! :smiley:
+Happy Hacking ! :smiley:
 
-<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">
+[<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">](https://www.hackthebox.eu/profile/249498)
