@@ -159,7 +159,8 @@ We download these 2 files and examine their content :
 Conclusion:
 - Passwords were not uploaded yet and are on Nathan's Desktop, which path is probably something like **C:\Users\Nathan\Desktop**.
 - There are some secret files and there are not in SharePoint, and that means probably still on the machine accessible with Nathan's account.
-- NVMS public access is still available.
+- **NVMS** public access is still available.
+- There is another appliocation called **"NSClient"**
 
 Of course, we don't have Nathan's creds at the moment, but we can search for NVMS.
 
@@ -199,7 +200,7 @@ The creds we were looking for are **nadine:L1k3B1gBut7s@W0rk**   :unlock:
 ### 4.1- Post-Compromise Enumeration
 Before using a privesc reporting tool like `winPEAS`, I usually check around if there is nothing obvious.     
 I first look at the account permissions with **"whoami /all"** command, but nothing particular here. Nadine has a low-privileged account.     
-Then I look at directories, and this time we can notice an unusual one: **"C:\Program Files\NSClient++"**
+Then I look at directories, and this time we can notice an unusual one: **"C:\Program Files\NSClient++"**. This one corresponds to what we previously read in Nathan's text file mentioning this application.
 
 Google is our very best friend :beers:   (when they don't spy to much on their users in "private mode"  :joy: but whatever...).      
 We find a link to its website https://nsclient.org/.
