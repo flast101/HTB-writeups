@@ -159,8 +159,8 @@ We download these 2 files and examine their content :
 Conclusion:
 - Passwords were not uploaded yet and are on Nathan's Desktop, which path is probably something like **C:\Users\Nathan\Desktop**.
 - There are some secret files and there are not in SharePoint, and that means probably still on the machine accessible with Nathan's account.
-- **NVMS** public access is still available.
-- There is another appliocation called **"NSClient"**
+- Public access to an application called **"NVMS"** is still available.
+- There is another appliocation called **"NSClient"**.
 
 Of course, we don't have Nathan's creds at the moment, but we can search for NVMS.
 
