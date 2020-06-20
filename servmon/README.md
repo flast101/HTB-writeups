@@ -12,13 +12,13 @@ Writeup: 20 June 2020
 2.2- [FTP Browsing](https://github.com/flast101/HTB-writeups/tree/master/servmon#22--ftp-browsing)      
 2.3- [NVMS-1000](https://github.com/flast101/HTB-writeups/tree/master/servmon#23--nvms-1000)
 
-**3- [Exploitation](https://github.com/flast101/HTB-writeups/tree/master/servmon#3--exploitation)**   
+**3- [Exploitation](https://github.com/flast101/HTB-writeups/tree/master/servmon#44--exploitation)**   
 
 **4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/servmon#4--privilege-escalation)**   
 4.1- [Post-Compromise Enumeration](https://github.com/flast101/HTB-writeups/tree/master/servmon#41--post-compromise-enumeration)        
 4.2- [Post-Compromise Exploitation Part 1 - Web Server Connection](https://github.com/flast101/HTB-writeups/tree/master/servmon#42--post-compromise-exploitation-part-1---web-server-connection)       
 4.3- [Post-Compromise Exploitation Part 2 - Script Execution](https://github.com/flast101/HTB-writeups/tree/master/servmon#43--post-compromise-exploitation-part-2---script-execution)        
-4.4- [Root.txt](https://github.com/flast101/HTB-writeups/tree/master/servmon#44--root.txt)
+4.4- [Root.txt](https://github.com/flast101/HTB-writeups/tree/master/servmon#44--roottxt)
 
 ## 2- Enumeration
 ### 2.1- nmap scan
@@ -362,7 +362,7 @@ Step 6 proposes to schedule the script, but clicking the **"Control"** button in
 ![nsc-queries](images/nsc-queries.png "nsc-queries")
 
 
-### 3.4- Root.txt
+### 4.4- Root.txt
 We have our shell !!   :fireworks:
 
 ![nsc-shell](images/nsc-shell.png "nsc-shell")
