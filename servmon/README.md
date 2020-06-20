@@ -257,7 +257,7 @@ We execute an ssh command from our attack machine. We will not technically issue
 
 Once we understand this, we may want an easy way to use this command, like a "fire and forget" mode where you don't have to enter the password. Let's give a try to this one-liner:
 ~~~
-root@kali:~# expect -c 'spawn ssh -N -L 0.0.0.0:8443:127.0.0.1:8443 nadine@10.10.10.184;expect "password:"; send "L1k3B1gBut7s@W0rk\r"; interact'
+root@kali:~# expect -c 'spawn ssh -N -L 0.0.0.0:8443:127.0.0.1:8443 nadine@10.10.10.184; expect "password:"; send "L1k3B1gBut7s@W0rk\r"; interact'
 ~~~
 
 ### 4.3- Post-Compromise Exploitation Part 2 - Script Execution
