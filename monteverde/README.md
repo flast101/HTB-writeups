@@ -4,7 +4,7 @@
 
 ![card](images/card.png "Monteverde")   
 Retire: 13 June 2020   
-Writeup release: 13 June 2020
+Writeup: 13 June 2020
 
 ### Summary
 
