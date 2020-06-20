@@ -4,7 +4,7 @@
 
 ![card](images/card.png "Resolute")
 Retire: 30 May 2020   
-Writeup release: 31 May 2020
+Writeup: 31 May 2020
 
 ### Summary
 
