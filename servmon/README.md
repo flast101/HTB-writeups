@@ -108,7 +108,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 First, what do we have here ?    
 - FTP: nmap indicates that Anonymous login is allowed.   :door:   
-- SSH: nothing particular, we may try to brute force it in cas we find nothing else to exploit.    
+- SSH: nothing particular, we may try to brute force it in case we find nothing else to exploit.    
 - A website on port 80: we can run a `gobuster` or `dirbuster` to have a look on directories and files we may find.
 - RPC and smb: it seems that null sessions are not allowed but smb is usually a good entry point.  
 - Unknown services.
@@ -158,7 +158,7 @@ We download these 2 files and examine their content :
 
 Conclusion:
 - Passwords were not uploaded yet and are on Nathan's Desktop, which path is probably something like **C:\Users\Nathan\Desktop**.
-- There are some secret files and there are not in SharePoint, and that means probably still on the machine accessible with Nathan's account.
+- There are some secret files and they are not in SharePoint, and that means probably still on the machine accessible with Nathan's account.
 - Public access to an application called **"NVMS"** is still available.
 - There is another appliocation called **"NSClient"**.
 
@@ -166,8 +166,8 @@ Of course, we don't have Nathan's creds at the moment, but we can search for NVM
 
 ### 2.3- NVMS-1000
 
-Googling information about NVMS, you will find on the product page http://en.tvt.net.cn/products/188.html that NVMS-1000 is a monitoring client which is specially designed for network video surveillance.        
-In the "Features" section, we can read the following : "*Brand new user interface: Main panel as the unified entry, clearly classifies the main functions. Each function adopts dynamic Tab label for easy operation. Preview window has embedded toolbar and right-clicking menu; adopts accordion tree view control.*"  
+Googling information about NVMS, we find on the product page http://en.tvt.net.cn/products/188.html that NVMS-1000 is a monitoring client which is specially designed for network video surveillance.        
+In the "Features" section, we can read the following: "*Brand new user interface: Main panel as the unified entry, clearly classifies the main functions. Each function adopts dynamic Tab label for easy operation. Preview window has embedded toolbar and right-clicking menu; adopts accordion tree view control.*"  
 
 We understand that there might be a web server and an interface installed on the machine. We easily find it by typing the url http://10.10.10.184, which is redirected here:
 
@@ -179,7 +179,7 @@ We understand that there might be a web server and an interface installed on the
 
 When we googled NVMS, we also noticed a link to EDB: **NVMS 1000 - Directory Traversal -** https://www.exploit-db.com/exploits/47774.
 
-Using it is as simple as putting the request in Burp repeater and clicking "send". Testing it with C:\windows\win.ini is nice, but we are interested in the passwords file we read about. Let's tryif we can read this file using the exploit :
+Using it is as simple as putting the request in `Burp Repeater` and clicking "send". Testing it with C:\windows\win.ini is nice, but we are interested in the passwords file we read about. Let's try if we can read this file using the exploit :
 
 ![burp](images/burp.png "burp")
 
@@ -198,7 +198,7 @@ The creds we were looking for are **nadine:L1k3B1gBut7s@W0rk**   :unlock:
 
 ## 4- Privilege Escalation
 ### 4.1- Post-Compromise Enumeration
-Before using a privesc reporting tool like `winPEAS`, I usually check around if there is nothing obvious.     
+Before using a privesc reporting tool like `WinPEAS`, I usually check around if there is nothing obvious.     
 I first look at the account permissions with **"whoami /all"** command, but nothing particular here. Nadine has a low-privileged account.     
 Then I look at directories, and this time we can notice an unusual one: **"C:\Program Files\NSClient++"**. This one corresponds to what we previously read in Nathan's text file mentioning this application.
 
@@ -209,7 +209,7 @@ There is also a link to its documentation: https://docs.nsclient.org.
 
 
 Exploit-DB is our second best friend.   :beers:     
-Here we find this : NSClient++ 0.5.2.35 - Privilege Escalation - https://www.exploit-db.com/exploits/46802
+Here is what we find: NSClient++ 0.5.2.35 - Privilege Escalation - https://www.exploit-db.com/exploits/46802
 
 
 ### 4.2- Post-Compromise Exploitation Part 1 - Web Server Connection
