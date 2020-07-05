@@ -4,7 +4,7 @@ Here are walkthroughs to root machines on the [HackTheBox](https://www.hackthebo
 - [Resolute](https://flast101.github.io/HTB-writeups/resolute)   
 - [Monteverde](https://flast101.github.io/HTB-writeups/monteverde)   
 - [ServMon](https://flast101.github.io/HTB-writeups/servmon)   
-- [Sauna]((https://flast101.github.io/HTB-writeups/servmon) : soon...
+- [Sauna](https://flast101.github.io/HTB-writeups/servmon) : soon...
 
 Happy hacking ! :smiley:
 
