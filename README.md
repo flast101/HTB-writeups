@@ -1,10 +1,10 @@
 # HTB-writeups
 Here you will find walkthroughs to root machines on the [HackTheBox](https://www.hackthebox.eu) website, an online platform for learning and teaching cyber security.
 
-- [Resolute](https://github.com/flast101/HTB-writeups/tree/master/resolute)
-- [Monteverde](https://github.com/flast101/HTB-writeups/tree/master/monteverde)
-- [ServMon](https://github.com/flast101/HTB-writeups/tree/master/servmon)
-- [Sauna](https://github.com/flast101/HTB-writeups/tree/master/sauna) : soon...
+- [Resolute](https://flast101.github.io/HTB-writeups/resolute)   
+- [Monteverde](https://flast101.github.io/HTB-writeups/monteverde)   
+- [ServMon](https://flast101.github.io/HTB-writeups/servmon)   
+- [Sauna]((https://flast101.github.io/HTB-writeups/servmon) : soon...
 
 Happy hacking ! :smiley:
 
