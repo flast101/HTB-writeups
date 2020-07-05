@@ -9,7 +9,7 @@ Writeup: 20 June 2020
 
 ### Summary
 
-**2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/mastSer/servmon#2--enumeration)**   
+**2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/master/servmon#2--enumeration)**   
 2.1- [nmap scan](https://github.com/flast101/HTB-writeups/tree/master/servmon#21--nmap-scan)   
 2.2- [FTP Browsing](https://github.com/flast101/HTB-writeups/tree/master/servmon#22--ftp-browsing)      
 2.3- [NVMS-1000](https://github.com/flast101/HTB-writeups/tree/master/servmon#23--nvms-1000)
