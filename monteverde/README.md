@@ -9,7 +9,7 @@ Writeup: 13 June 2020
 
 ### Summary
 
-**2- [Enumeration](https://flast101.github.io/monteverde#2--enumeration)**   
+**2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/master/monteverde#2--enumeration)**   
 2.1- [nmap scan](https://github.com/flast101/HTB-writeups/tree/master/monteverde#21--nmap-scan)   
 2.2- [Active Directory Enumeration](https://github.com/flast101/HTB-writeups/tree/master/monteverde#22--active-directory-enumeration)   
 
