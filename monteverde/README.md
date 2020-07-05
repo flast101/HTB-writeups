@@ -1,3 +1,5 @@
+_[<-- Home](https://flast101.github.io)_
+
 # Monteverde
 ## 1- Overview
 
@@ -399,6 +401,8 @@ We finally have our Administrator credentials **"administrator:xxxxxxxxxxxxxxxx"
 
 ![root.txt](images/root-txt.png "root.txt")
 
-Happy Hacking ! :smiley:
+Happy Hacking ! 
 
 [<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">](https://www.hackthebox.eu/profile/249498)
+
+_[<-- Home](https://flast101.github.io)_
