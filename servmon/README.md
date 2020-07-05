@@ -1,3 +1,5 @@
+_[<-- Home](https://flast101.github.io)_
+
 # ServMon
 ## 1- Overview
 
@@ -107,7 +109,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 ~~~
 
 First, what do we have here ?    
-- FTP: nmap indicates that Anonymous login is allowed.   :door:   
+- FTP: nmap indicates that Anonymous login is allowed.      
 - SSH: nothing particular, we may try to brute force it in case we find nothing else to exploit.    
 - A website on port 80: we can run a `gobuster` or `dirbuster` to have a look on directories and files we may find.
 - RPC and smb: it seems that null sessions are not allowed but smb is usually a good entry point.  
@@ -191,7 +193,7 @@ Now, we just have to put our users Nadine and Nathan in a file **"users.txt"**, 
 
 I love it when a plan comes together.
 
-The creds we were looking for are **nadine:L1k3B1gBut7s@W0rk**   :unlock:
+The creds we were looking for are **nadine:L1k3B1gBut7s@W0rk**   
 
 ![user-txt](images/user-txt.png "user-txt")
 
@@ -202,13 +204,13 @@ Before using a privesc reporting tool like `WinPEAS`, I usually check around if 
 I first look at the account permissions with **"whoami /all"** command, but nothing particular here. Nadine has a low-privileged account.     
 Then I look at directories, and this time we can notice an unusual one: **"C:\Program Files\NSClient++"**. This one corresponds to what we previously read in Nathan's text file mentioning this application.
 
-Google is our very best friend :beers:   (when they don't spy to much on their users in "private mode"  :joy: but whatever...).      
+Google is our very best friend    (when they don't spy to much on their users in "private mode"  :joy: but whatever...).      
 We find a link to its website https://nsclient.org/.
 "*NSClient++ is an agent designed originally to work with Nagios but has since evolved into a fully fledged monitoring agent which can be used with numerous monitoring tools (like Icinga, Naemon, OP5, NetEye Opsview etc).*"       
 There is also a link to its documentation: https://docs.nsclient.org.
 
 
-Exploit-DB is our second best friend.   :beers:     
+Exploit-DB is our second best friend.        
 Here is what we find: NSClient++ 0.5.2.35 - Privilege Escalation - https://www.exploit-db.com/exploits/46802
 
 
@@ -363,7 +365,7 @@ Step 6 proposes to schedule the script, but clicking the **"Control"** button in
 
 
 ### 4.4- Root.txt
-We have our shell !!   :fireworks:
+We have our shell !!   
 
 ![nsc-shell](images/nsc-shell.png "nsc-shell")
 
@@ -372,6 +374,8 @@ And we can grab the root.txt file:
 ![root-txt](images/root-txt.png "root-txt")
 
 
-Happy Hacking ! :smiley:
+Happy Hacking ! 
 
 [<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">](https://www.hackthebox.eu/profile/249498)
+
+_[<-- Home](https://flast101.github.io)_
