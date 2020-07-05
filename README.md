@@ -1,5 +1,5 @@
 # HTB-writeups
-Here you will find walkthroughs to root machines on the [HackTheBox](https://www.hackthebox.eu) website, an online platform for learning and teaching cyber security.
+Here are walkthroughs to root machines on the [HackTheBox](https://www.hackthebox.eu) website, an online platform for learning and teaching cyber security.
 
 - [Resolute](https://flast101.github.io/HTB-writeups/resolute)   
 - [Monteverde](https://flast101.github.io/HTB-writeups/monteverde)   
