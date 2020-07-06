@@ -9,18 +9,19 @@ Writeup: 31 May 2020
 
 ### Summary
 
-**2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#2--enumeration)**   
-2.1- [nmap scan](https://github.com/flast101/HTB-writeups/tree/master/resolute#21--nmap-scan)   
-2.2- [Active Directory Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#22--active-directory-enumeration)   
+**2- Enumeration**   
+2.1- nmap scan   
+2.2- Active Directory Enumeration   
 
-**3- [Exploitation](https://github.com/flast101/HTB-writeups/tree/master/resolute#3--exploitation)**   
-3.1- [Bruteforcing Credentials](https://github.com/flast101/HTB-writeups/tree/master/resolute#31--bruteforcing-credentials)   
-3.2- [Getting user.txt](https://github.com/flast101/HTB-writeups/tree/master/resolute#32--getting-usertxt)   
+**3- Exploitation**   
+3.1- Bruteforcing Credentials   
+3.2- Getting user.txt]   
 
-**4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/resolute#4--privilege-escalation)**   
-4.1- [Post-Compromise Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#41--post-compromise-enumeration)   
-4.2- [New Account Enumeration](https://github.com/flast101/HTB-writeups/tree/master/resolute#42--new-account-enumeration)  
-4.3- [Post-Compromise Exploitation](https://github.com/flast101/HTB-writeups/tree/master/resolute#43--post-compromise-exploitation)
+**4- Privilege Escalation**   
+4.1- Post-Compromise Enumeration   
+4.2- New Account Enumeration   
+4.3- Post-Compromise Exploitation
+
 
 ## 2- Enumeration
 ### 2.1- nmap scan
