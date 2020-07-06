@@ -1,4 +1,3 @@
-_[<-- Home](https://flast101.github.io)_
 
 # Resolute
 ## 1- Overview
@@ -436,8 +435,6 @@ nt authority\system
 ![root.txt](images/rootflag.png "root.txt")
 
 
-Happy Hacking ! 
+Happy Hacking ! :smiley:
 
 [<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">](https://www.hackthebox.eu/profile/249498)
-
-_[<-- Home](https://flast101.github.io)_
