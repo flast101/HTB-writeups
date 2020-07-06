@@ -1,5 +1,3 @@
-_[<-- Home](https://flast101.github.io)_
-
 # Monteverde
 ## 1- Overview
 
@@ -9,7 +7,7 @@ Writeup: 13 June 2020
 
 ### Summary
 
-**2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/master/monteverde#2--enumeration)**   
+**2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/mastSer/monteverde#2--enumeration)**   
 2.1- [nmap scan](https://github.com/flast101/HTB-writeups/tree/master/monteverde#21--nmap-scan)   
 2.2- [Active Directory Enumeration](https://github.com/flast101/HTB-writeups/tree/master/monteverde#22--active-directory-enumeration)   
 
@@ -393,7 +391,7 @@ d-----        5/31/2020  11:37 PM                WindowsPowerShell
 -a----        5/31/2020  11:13 PM         972875 sharphound.ps1
 ~~~
 Notice that I first tried BloodHound, but unsuccessfully...  
- 
+
 And now, this is time for execution. We must execute the exploit in the directory **"C:\Program Files\Microsoft Azure AD Sync\Bin"**, and it works fine:
 ![AdDecrypt](images/addecrypt.png "AdDecrypt.exe")
 
@@ -401,8 +399,6 @@ We finally have our Administrator credentials **"administrator:xxxxxxxxxxxxxxxx"
 
 ![root.txt](images/root-txt.png "root.txt")
 
-Happy Hacking ! 
+Happy Hacking ! :smiley:
 
 [<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">](https://www.hackthebox.eu/profile/249498)
-
-_[<-- Home](https://flast101.github.io)_
