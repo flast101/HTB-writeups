@@ -7,19 +7,20 @@ Writeup: 13 June 2020
 
 ### Summary
 
-**2- Enumeration**   
-2.1- nmap scan   
-2.2- Active Directory Enumeration   
+**2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/mastSer/monteverde#2--enumeration)**   
+2.1- [nmap scan](https://github.com/flast101/HTB-writeups/tree/master/monteverde#21--nmap-scan)   
+2.2- [Active Directory Enumeration](https://github.com/flast101/HTB-writeups/tree/master/monteverde#22--active-directory-enumeration)   
 
-**3- Exploitation**   
-3.1- Bruteforcing Credentials   
-3.2- SMB Shares     
-3.3- Identifying Another Account   
-3.4- Getting user.txt   
+**3- [Exploitation](https://github.com/flast101/HTB-writeups/tree/master/monteverde#3--exploitation)**   
+3.1- [Bruteforcing Credentials](https://github.com/flast101/HTB-writeups/tree/master/monteverde#31--bruteforcing-credentials)   
+3.2- [SMB Shares](https://github.com/flast101/HTB-writeups/tree/master/monteverde#32--smb-shares)     
+3.3- [Identifying Another Account](https://github.com/flast101/HTB-writeups/tree/master/monteverde#33--identifying-another-account)   
+3.4- [Getting user.txt](https://github.com/flast101/HTB-writeups/tree/master/monteverde#34--getting-usertxt)   
 
-**4- Privilege Escalation**   
-4.1- Post-Compromise Enumeration   
-4.2- Post-Compromise Exploitation
+**4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/monteverde#4--privilege-escalation)**   
+4.1- [Post-Compromise Enumeration](https://github.com/flast101/HTB-writeups/tree/master/monteverde#41--post-compromise-enumeration)   
+4.2- [Post-Compromise Exploitation](https://github.com/flast101/HTB-writeups/tree/master/monteverde#42--post-compromise-exploitation)    
+
 
 ## 2- Enumeration
 ### 2.1- nmap scan
