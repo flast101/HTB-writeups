@@ -30,7 +30,7 @@ Writeup: 11 July 2020
 ## 2- Enumeration
 ### 2.1- Nmap Scan
 
-First things first, we begin with a `nmap` scan:
+First things first, we begin with a **`nmap`** scan:
 ~~~
 root@kali:~# nmap --reason -Pn -sV -sC --version-all 10.10.10.176
 
@@ -67,7 +67,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 # Nmap done at Mon Jun  1 10:46:19 2020 -- 1 IP address (1 host up) scanned in 13.65 seconds
 ~~~
 
-There are only 2 ports open, 22 with and 80 with http. There is an Apache web server v. 2.4.29 installed and the OS must be an Ubuntu.
+There are only 2 ports open, 22 with SSH and 80 with HTTP. There is an Apache web server v. 2.4.29 installed and the OS must be an Ubuntu.
 
 Let's have a look on the web site hosted there.
 
