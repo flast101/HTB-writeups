@@ -5,6 +5,7 @@
 Retire: 20 June 2020   
 Writeup: 20 June 2020
 
+
 ### Summary
 
 **2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/mastSer/servmon#2--enumeration)**   
@@ -20,6 +21,7 @@ Writeup: 20 June 2020
 4.3- [Post-Compromise Exploitation Part 2 - Script Execution](https://github.com/flast101/HTB-writeups/tree/master/servmon#43--post-compromise-exploitation-part-2---script-execution)        
 4.4- [Root.txt](https://github.com/flast101/HTB-writeups/tree/master/servmon#44--roottxt)
 
+* * *
 ## 2- Enumeration
 ### 2.1- nmap scan
 First things first, we begin with a `nmap` scan:
@@ -174,7 +176,7 @@ We understand that there might be a web server and an interface installed on the
 ![nvms](images/NVMS.png "NVMS")
 
 
-
+* * *
 ## 3- Exploitation
 
 When we googled NVMS, we also noticed a link to EDB: **NVMS 1000 - Directory Traversal -** https://www.exploit-db.com/exploits/47774.
@@ -195,7 +197,7 @@ The creds we were looking for are **nadine:L1k3B1gBut7s@W0rk**   :unlock:
 
 ![user-txt](images/user-txt.png "user-txt")
 
-
+* * *
 ## 4- Privilege Escalation
 ### 4.1- Post-Compromise Enumeration
 Before using a privesc reporting tool like `WinPEAS`, I usually check around if there is nothing obvious.     
