@@ -21,7 +21,7 @@ Writeup: 13 June 2020
 4.1- [Post-Compromise Enumeration](https://github.com/flast101/HTB-writeups/tree/master/monteverde#41--post-compromise-enumeration)   
 4.2- [Post-Compromise Exploitation](https://github.com/flast101/HTB-writeups/tree/master/monteverde#42--post-compromise-exploitation)    
 
-
+* * *
 ## 2- Enumeration
 ### 2.1- nmap scan
 
@@ -160,6 +160,7 @@ sAMAccountName: roleary
 sAMAccountName: smorgan
 ~~~
 
+* * *
 ## 3- Exploitation
 ### 3.1- Bruteforcing Credentials
 
@@ -310,6 +311,8 @@ We have new credentials **mhope:4n0therD4y@n0th3r$**. What can we do with them ?
 
 ![user.txt](images/user-txt.png "user.txt")
 
+
+* * *
 ## 4- Privilege Escalation
 
 ### 4.1- Post-Compromise Enumeration  
