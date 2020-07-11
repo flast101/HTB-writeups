@@ -186,7 +186,7 @@ Using it is as simple as putting the request in `Burp Repeater` and clicking "se
 
 ![burp](images/burp.png "burp")
 
-Beautiful !  :fishing_pole_and_fish:   
+Beautiful !     
 
 Now, we just have to put our users Nadine and Nathan in a file **"users.txt"**, the passwords in another file **"passwords.txt"**, and run `hydra` to test which creds are valid for a ssh login:
 
