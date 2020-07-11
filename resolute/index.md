@@ -22,7 +22,7 @@ Writeup: 31 May 2020
 4.2- New Account Enumeration   
 4.3- Post-Compromise Exploitation
 
-
+* * *
 ## 2- Enumeration
 ### 2.1- nmap scan
 As usual, we begin with a nmap scan:
@@ -167,7 +167,7 @@ Desc: Account created. Password set to Welcome123!
 We may have an account named "marko" with the password "Welcome123!".
 
 
-
+* * *
 ## 3- Exploitation
 ### 3.1- Bruteforcing Credentials
 However,  if we try to log in with these creds, it does not work. It must be a “welcome” password that has to be changed when the new user login. And he changed it. However, another user might have forgotten to change it and still has it active.
@@ -205,7 +205,7 @@ Info: Establishing connection to remote endpoint
 
 
 
-
+* * *
 ## 4- Privilege Escalation
 ### 4.1- Post-Compromise Enumeration
 
