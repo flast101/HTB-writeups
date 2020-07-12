@@ -188,7 +188,7 @@ From Burp, we create an account “admin” with the email address **“admin@bo
 
 Now, let's try to login to the admin panel on http://10.10.10.176/admin/index.php. It may not work the first time, but if we register once again, it works !
 
-![library-admin](library-admin.png "library-admin")
+![library-admin](images:library-admin.png "library-admin")
 
 We have our foothold. What can we do from there ?
 
