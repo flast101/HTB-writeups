@@ -79,7 +79,51 @@ Going to the url http://10.10.10.176, we arrive on the following sign in/sign up
 
 ![signin](images/signin.png "signin")
 
-If we run **`gobuster`**, we can see there is an admin page:
+
+
+If we run **`gobuster`** with `gobuster dir -u http://10.10.10.176:80/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -z -k -l -x "txt,html,php,asp,aspx,jsp"`, we obtain the following result:
+
+~~~
+/.hta (Status: 403) [Size: 277]
+/.hta.txt (Status: 403) [Size: 277]
+/.hta.html (Status: 403) [Size: 277]
+/.hta.php (Status: 403) [Size: 277]
+/.hta.asp (Status: 403) [Size: 277]
+/.hta.aspx (Status: 403) [Size: 277]
+/.hta.jsp (Status: 403) [Size: 277]
+/.htpasswd (Status: 403) [Size: 277]
+/.htpasswd.txt (Status: 403) [Size: 277]
+/.htpasswd.html (Status: 403) [Size: 277]
+/.htpasswd.php (Status: 403) [Size: 277]
+/.htpasswd.asp (Status: 403) [Size: 277]
+/.htpasswd.aspx (Status: 403) [Size: 277]
+/.htpasswd.jsp (Status: 403) [Size: 277]
+/.htaccess (Status: 403) [Size: 277]
+/.htaccess.txt (Status: 403) [Size: 277]
+/.htaccess.html (Status: 403) [Size: 277]
+/.htaccess.php (Status: 403) [Size: 277]
+/.htaccess.asp (Status: 403) [Size: 277]
+/.htaccess.aspx (Status: 403) [Size: 277]
+/.htaccess.jsp (Status: 403) [Size: 277]
+/admin (Status: 301) [Size: 312]
+/books.php (Status: 302) [Size: 0]
+/contact.php (Status: 302) [Size: 0]
+/db.php (Status: 200) [Size: 0]
+/docs (Status: 301) [Size: 311]
+/download.php (Status: 302) [Size: 0]
+/feedback.php (Status: 302) [Size: 0]
+/home.php (Status: 302) [Size: 0]
+/images (Status: 301) [Size: 313]
+/index.php (Status: 200) [Size: 6800]
+/index.php (Status: 200) [Size: 6800]
+/logout.php (Status: 302) [Size: 0]
+/profile.php (Status: 302) [Size: 0]
+/search.php (Status: 302) [Size: 0]
+/server-status (Status: 403) [Size: 277]
+/settings.php (Status: 302) [Size: 0]
+~~~
+
+Notice that there is an admin page, and this is the following page:
 
 ![signin-admin](images/signin-admin.png "signin-admin")
 
@@ -99,12 +143,12 @@ Looking around, we notice :
 
 - On the “Books” page, PDF documents are downloadable.
 - On the “Collections” page, we can upload files, but can not access them afterward.
-- The contact page reveal that there is an account “admin@book.htb”.
+- The contact page reveals that there is an admin account with email “admin@book.htb”.
 
 
 
 
-On Burp, we can see that the registering form fields are sanitized with the following code:
+On Burp, we can see in _**index.php**_ that the registering form fields are sanitized with the following code:
 ```
 <script>
   if (document.location.search.match(/type=embed/gi)) {
