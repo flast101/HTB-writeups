@@ -247,7 +247,7 @@ OK. We have a password, and the "allowed hosts" parameter confirms that we shoul
 As we have a local low-privileged SSH access, we may try using this compromised windows machine to set up a port forwarding.
 
 With SSH, we access the windows machine on its port 22 and we want to get to the NSClient application port. But which port is it ?    
-We look for port number on the documentation site and we get the information we need on https://docs.nsclient.org/reference/generic/WEBServer/#port-number:
+We look for port number on the documentation site and we get the information we need on [https://docs.nsclient.org/reference/generic/WEBServer/#port-number](https://docs.nsclient.org/reference/generic/WEBServer/#port-number):
 
 ![nsc-port](images/nsc-port.png "nsc-port")
 
