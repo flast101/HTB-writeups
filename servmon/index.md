@@ -169,10 +169,10 @@ Of course, we don't have Nathan's creds at the moment, but we can search for NVM
 
 ### 2.3- NVMS-1000
 
-Googling information about NVMS, we find on the product page http://en.tvt.net.cn/products/188.html that NVMS-1000 is a monitoring client which is specially designed for network video surveillance.        
+Googling information about NVMS, we find on the product page [http://en.tvt.net.cn/products/188.html](http://en.tvt.net.cn/products/188.html) that NVMS-1000 is a monitoring client which is specially designed for network video surveillance.        
 In the "Features" section, we can read the following: "*Brand new user interface: Main panel as the unified entry, clearly classifies the main functions. Each function adopts dynamic Tab label for easy operation. Preview window has embedded toolbar and right-clicking menu; adopts accordion tree view control.*"  
 
-We understand that there might be a web server and an interface installed on the machine. We easily find it by typing the url http://10.10.10.184, which is redirected here:
+We understand that there might be a web server and an interface installed on the machine. We easily find it by typing the url [http://10.10.10.184](http://10.10.10.184), which is redirected here:
 
 ![nvms](images/NVMS.png "NVMS")
 
@@ -180,7 +180,7 @@ We understand that there might be a web server and an interface installed on the
 * * * 
 ## 3- Exploitation
 
-When we googled NVMS, we also noticed a link to EDB: **NVMS 1000 - Directory Traversal -** https://www.exploit-db.com/exploits/47774.
+When we googled NVMS, we also noticed a link to EDB: **NVMS 1000 - Directory Traversal -** [https://www.exploit-db.com/exploits/47774](https://www.exploit-db.com/exploits/47774).
 
 Using it is as simple as putting the request in `Burp Repeater` and clicking "send". Testing it with C:\windows\win.ini is nice, but we are interested in the passwords file we read about. Let's try if we can read this file using the exploit :
 
@@ -206,19 +206,20 @@ I first look at the account permissions with **"whoami /all"** command, but noth
 Then I look at directories, and this time we can notice an unusual one: **"C:\Program Files\NSClient++"**. This one corresponds to what we previously read in Nathan's text file mentioning this application.
 
 Google is our very best friend    (when they don't spy to much on their users in "private mode"  :joy: but whatever...).      
-We find a link to its website https://nsclient.org/.
+We find a link to its website [https://nsclient.org/](https://nsclient.org/).
 "*NSClient++ is an agent designed originally to work with Nagios but has since evolved into a fully fledged monitoring agent which can be used with numerous monitoring tools (like Icinga, Naemon, OP5, NetEye Opsview etc).*"       
-There is also a link to its documentation: https://docs.nsclient.org.
+There is also a link to its documentation: [https://docs.nsclient.org](https://docs.nsclient.org).
 
 
 Exploit-DB is our second best friend.        
-Here is what we find: NSClient++ 0.5.2.35 - Privilege Escalation - https://www.exploit-db.com/exploits/46802
+Here is what we find: **NSClient++ 0.5.2.35 - Privilege Escalation -** [https://www.exploit-db.com/exploits/46802](https://www.exploit-db.com/exploits/46802)
 
 
 ### 4.2- Post-Compromise Exploitation Part 1 - Web Server Connection
+
 Reading the exploit, there is a 7 steps process which requires an attacker to have local access to a system running NSClient++ with Web Server.
 
-At the first step, it is written that we may grab the administrator password in the file C:\Program Files\NSClient++\nsclient.ini.
+At the first step, it is written that we may grab the administrator password in the file _**C:\Program Files\NSClient++\nsclient.ini**_.
 Let's have a look to this file :eyes: :
 ~~~
 nadine@SERVMON C:\Program Files\NSClient++>type nsclient.ini
