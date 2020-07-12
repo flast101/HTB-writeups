@@ -148,12 +148,9 @@ Looking around, we notice :
 
 
 
-On Burp, we can see in _**index.php**_ that the registering form fields are sanitized with the following code:
+
+In Burp, we can see in _**index.php**_ that the registering form fields are sanitized with the code of the validateForm function:
 ```
-<script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
 function validateForm() {
   var x = document.forms["myForm"]["name"].value;
   var y = document.forms["myForm"]["email"].value;
