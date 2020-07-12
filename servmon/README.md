@@ -211,13 +211,13 @@ There is also a link to its documentation: https://docs.nsclient.org.
 
 
 Exploit-DB is our second best friend.   :beers:     
-Here is what we find: NSClient++ 0.5.2.35 - Privilege Escalation - https://www.exploit-db.com/exploits/46802
+Here is what we find: **NSClient++ 0.5.2.35 - Privilege Escalation -** https://www.exploit-db.com/exploits/46802
 
 
 ### 4.2- Post-Compromise Exploitation Part 1 - Web Server Connection
 Reading the exploit, there is a 7 steps process which requires an attacker to have local access to a system running NSClient++ with Web Server.
 
-At the first step, it is written that we may grab the administrator password in the file C:\Program Files\NSClient++\nsclient.ini.
+At the first step, it is written that we may grab the administrator password in the file _**C:\Program Files\NSClient++\nsclient.ini**_.
 Let's have a look to this file :eyes: :
 ~~~
 nadine@SERVMON C:\Program Files\NSClient++>type nsclient.ini
