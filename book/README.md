@@ -198,7 +198,7 @@ First thing, if we go to the **"Collections"** page, we find two **"PDF"** butto
 
 ![collections](images/collections.png "collections")
 
-Clicking on the **"Collections"** PDF button allow to download and open a PDf document that includes link to each document published on the site.
+Clicking on the **"Collections"** PDF button allows to download and open a PDf document that includes link to each document published on the site.
 
 In another browser windows, let's try to log in on the standard page and upload any PDF file to see if it is correctly display in the documents list.   
 We first try to see what it does with a sample.pdf first. We upload the file and we find it here :
