@@ -75,7 +75,7 @@ Let's have a look on the web site hosted there.
 
 Before visiting the web site, we run Burp Suite in order to register the web traffic.
 
-Going to the url http://10.10.10.176, we arrive on the following sign in/sign up page.
+Going to the url [http://10.10.10.176](http://10.10.10.176), we arrive on the following sign in/sign up page.
 
 ![signin](images/signin.png "signin")
 
@@ -172,7 +172,7 @@ It is interesting to see that the name and email fields are limited in size.
 ## 3- Exploitation
 ### 3.1- Exploitating Registering Page
 
-As we know from the contact page that there is an account “admin@book.htb”, we can guess it is an admin account and the first thing we want to try is registering this same account again, but with new creds that we choose. Wrong numbre, it fails: 
+As we know from the contact page that there is an account “admin@book.htb”, we can guess it is an admin account and the first thing we want to try is registering this same account again, but with new creds that we choose. Wrong number, it fails: 
 
 
 ![user-exists](images/user-exists.png "user-exists")
@@ -191,7 +191,7 @@ From Burp, we create an account “admin” with the email address **“admin@bo
 ![burp](images/burp.png "burp")
 
 
-Now, let's try to login to the admin panel on http://10.10.10.176/admin/index.php. It may not work the first time, but if we register once again, it works !
+Now, let's try to login to the admin panel on [http://10.10.10.176/admin/index.php](http://10.10.10.176/admin/index.php). It may not work the first time, but if we register once again, it works !
 
 ![library-admin](images/library-admin.png "library-admin")
 
@@ -288,7 +288,7 @@ As we know the users, let's try to grab a private ssh key for the user “reader
 ![ssh-key](images/ssh-key.png "ssh-key")
 
 
-Very good, we are almost done. However, using it as is does not work:    
+Very good, we are almost done. However, using it as it is does not work:    
 
 ```
 root@kali:~/.ssh# ssh -i book_rsa reader@10.10.10.176
