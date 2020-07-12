@@ -228,11 +228,11 @@ f we try with a php file, it won't do anything. We must try to find a way to exe
 
 There is a known abuse of dynamically generated PDF by causing a server side XSS. Google "file read XSS pdf” gives great results.    
 We will try to use this one :
-Server Side XSS (Dynamic PDF) : https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting/server-side-xss-dynamic-pdf
+Server Side XSS (Dynamic PDF) : [https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting/server-side-xss-dynamic-pdf](https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting/server-side-xss-dynamic-pdf)
 
 We have to make several tries and modify the payload as it is here:   
 Local File Read Access through XSS in Dynamically Generated Email Template PDF:
-https://www.esecurify.com/local-file-read-access-through-xss-in-dynamically-generated-email-template-pdf/
+[https://www.esecurify.com/local-file-read-access-through-xss-in-dynamically-generated-email-template-pdf/](https://www.esecurify.com/local-file-read-access-through-xss-in-dynamically-generated-email-template-pdf/)
 
 It works with the following script, putting it directly in the title field, while uploading any pdf file (we are using sample.pdf, a simple one page pdf file):
 ~~~
@@ -297,7 +297,7 @@ Load key "book_rsa": invalid format
 reader@10.10.10.176's password:
 ``` 
 
-The tool **`pdfminer.six`** found at https://github.com/pdfminer/pdfminer.six allows to format the key correctly:
+The tool **`pdfminer.six`** found at [https://github.com/pdfminer/pdfminer.six](https://github.com/pdfminer/pdfminer.six) allows to format the key correctly:
 ~~~
 root@kali:~# python3 /usr/local/bin/pdf2txt.py rsakey.pdf > book_rsa
 ~~~
@@ -378,7 +378,7 @@ reader@book:~$ cat backups/access.log.1
 192.168.0.104 - - [29/Jun/2019:14:39:55 +0000] "GET /robbie03 HTTP/1.1" 404 446 "-" "curl"
 ~~~
 
-***"lse.sh"*** is in the home directory and **LSE** stands for the tool called **Linux Smart Enumeration**. We can find more information about this enumeration tool and its usage here: https://github.com/diego-treitos/linux-smart-enumeration   
+***"lse.sh"*** is in the home directory and **LSE** stands for the tool called **Linux Smart Enumeration**. We can find more information about this enumeration tool and its usage here: [https://github.com/diego-treitos/linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)   
 
 We can use it to gather more information about the environment and find a way to escalate privileges: `reader@book:~$ ./lse.sh -l2 -i`
 
@@ -398,7 +398,7 @@ n/a                          n/a           n/a                          n/a     
 9 timers listed.
 ~~~
 
-We can find more information about timers and services in Linux here: https://www.linux.com/topic/desktop/setting-timer-systemd-linux/
+We can find more information about timers and services in Linux here: [https://www.linux.com/topic/desktop/setting-timer-systemd-linux/](https://www.linux.com/topic/desktop/setting-timer-systemd-linux/)   
 
 It seems that the book.timer unit is activated by book.service very often.
 
@@ -435,7 +435,7 @@ It is clear now that it is activated avery minute and it executes the program ba
 
 Although we can not read the content of the script because it is in root directory, we may gather information about what it is actually doing by looking closely at processes executed on the target.
 
-**`pspy`** is very good at this. It is a command line tool designed to snoop on processes without need for root permissions. It allows you to see commands run by other users, cron jobs, etc. as they execute. We can download it here: https://github.com/DominicBreuker/pspy
+**`pspy`** is very good at this. It is a command line tool designed to snoop on processes without need for root permissions. It allows you to see commands run by other users, cron jobs, etc. as they execute. We can download it here: [https://github.com/DominicBreuker/pspy](https://github.com/DominicBreuker/pspy)   
 
 We set up a web server on our Kali machine:
 ~~~
@@ -472,7 +472,7 @@ logrotate 3.11.0
 
 
 The exploit  on EDB is:   
-**logrotten 3.15.1 - Privilege Escalation**: https://www.exploit-db.com/exploits/47466
+**logrotten 3.15.1 - Privilege Escalation**: [https://www.exploit-db.com/exploits/47466](https://www.exploit-db.com/exploits/47466)
 
 It requests the following conditions for privilege escalation :
   - Logrotate has to be executed as root
