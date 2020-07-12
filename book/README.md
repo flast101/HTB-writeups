@@ -170,7 +170,7 @@ It is interesting to see that the name and email fields are limited in size.
 ## 3- Exploitation
 ### 3.1- Exploitating Registering Page
 
-As we know from the contact page that there is an account “admin@book.htb”, we can guess it is an admin account and the first thing we want to try is registering this same account again, but with new creds that we choose. Wrong numbre, it fails: 
+As we know from the contact page that there is an account “admin@book.htb”, we can guess it is an admin account and the first thing we want to try is registering this same account again, but with new creds that we choose. Wrong number, it fails: 
 
 
 ![user-exists](images/user-exists.png "user-exists")
@@ -286,7 +286,7 @@ As we know the users, let's try to grab a private ssh key for the user “reader
 ![ssh-key](images/ssh-key.png "ssh-key")
 
 
-Very good, we are almost done. However, using it as is does not work:    
+Very good, we are almost done. However, using it as it is does not work:    
 
 ```
 root@kali:~/.ssh# ssh -i book_rsa reader@10.10.10.176
