@@ -350,9 +350,9 @@ Mandatory Label\Medium Mandatory Level     Label            S-1-16-8192
 This time, we notice this account is member of MEGABANK\Contractors and MEGABANK\DnsAdmins.
 
 Let's google what we can do from being a DNS Admin. We can find several links about how to escalate privileges. The most usefull links I found are :
-- Windows Privilege Escalation: DNSAdmins to Domain Admins - Server Level DLL Injection: https://www.abhizer.com/windows-privilege-escalation-dnsadmin-to-domaincontroller/
-- DNS Admin Privesc in Active Directory (AD)(Windows): https://medium.com/techzap/dns-admin-privesc-in-active-directory-ad-windows-ecc7ed5a21a2
-- From DnsAdmins to SYSTEM to Domain Compromise: https://ired.team/offensive-security-experiments/active-directory-kerberos-abuse/from-dnsadmins-to-system-to-domain-compromise
+- Windows Privilege Escalation: DNSAdmins to Domain Admins - Server Level DLL Injection: [https://www.abhizer.com/windows-privilege-escalation-dnsadmin-to-domaincontroller/](https://www.abhizer.com/windows-privilege-escalation-dnsadmin-to-domaincontroller/)   
+- DNS Admin Privesc in Active Directory (AD)(Windows): [https://medium.com/techzap/dns-admin-privesc-in-active-directory-ad-windows-ecc7ed5a21a2](https://medium.com/techzap/dns-admin-privesc-in-active-directory-ad-windows-ecc7ed5a21a2)   
+- From DnsAdmins to SYSTEM to Domain Compromise: [https://ired.team/offensive-security-experiments/active-directory-kerberos-abuse/from-dnsadmins-to-system-to-domain-compromise](https://ired.team/offensive-security-experiments/active-directory-kerberos-abuse/from-dnsadmins-to-system-to-domain-compromise)
 
 
 ### 4.3- Post-Compromise Exploitation
