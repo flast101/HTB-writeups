@@ -556,7 +556,7 @@ reader@book:~$ gcc logrotten.c -o logrotten
 reader@book:~$ chmod +x payload logrotten
 ~~~
 
-On our Kali machine we set up a listener with `root@kali:~# nc -nlvp 4444` before we run the exploit.
+On our Kali machine we set up a listener with **`# nc -nlvp 4444`** before we run the exploit.
 
 At the same time we run it, we want the log rotate to trigger our exploit. After testing, wa can notice that there is _**access.log**_ file, and we know that each minute it is backed up and replace by a new and empty file. We actually just want the _**access.log**_ file to not be empty. A way to do this is to generate and write anough random data in the log file _**access.log**_. Another way is **`cp backups/access.log.1 backups/access.log`**.
 
@@ -578,7 +578,7 @@ It takes several trials before it works and the shell is unstable but it finally
 
 ### 4.4- Reverse Shell Stabilization
 
-We got _**root.txt**_ but our reverse shell is dying. We may want to get a stable reverse shell. The most efficient solution here is to migrate the process on which the shell is running. We could do this by starting another reverse shell from the brief root shell we have, but after some tests, a simple `# bash -i` is enough: 
+We got _**root.txt**_ but our reverse shell is dying. We may want to get a stable reverse shell. The most efficient solution here is to migrate the process on which the shell is running. We could do this by starting another reverse shell from the brief root shell we have, but after some tests, a simple **`# bash -i`** is enough: 
 
 ![bash-i](images/bash-i.png "bash-i")
 
