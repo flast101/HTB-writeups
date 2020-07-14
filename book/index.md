@@ -584,7 +584,7 @@ We got _**root.txt**_ but our reverse shell is dying. We may want to get a stabl
 
 There is another solution which personally I don't like very much. Now that we are root, we can see that there is a _**.ssh/**_ directory in _**/root**_. So, it means that using **`logrotten`**, we could modify this directory, cat or copy the SSH private key /root/.shh/id_rsa to SSH as root user.
 
-What I dont like whit this solution is that there could not be a _**.ssh**_ directory with a ssh private key here. This solution won't work in such a case.
+What I dont like with this solution is that it happens that there is no _**.ssh**_ directory with a ssh private key here. This solution won't work in such a case.
 
 The last solution would be to **`cat /etc/shadow`** to get the root password hash and then try to crack it with **`hashcat`**. I didn't try it but the hash is sha512crypt (**`hashcat -m 1800`**), so you might need a shit load of luck if the password is not weak...
 
