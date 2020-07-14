@@ -179,12 +179,13 @@ As we know from the contact page that there is an account “admin@book.htb”, 
 
 Now, we can try again but this time we add space char to the e-mail and try to exploit the size limitation.   
 
-I didn't know much about this when I rooted the machine and when I first wrote this walkthrough, but it seems that trailing spaces are ignored during database operations. This means that the usernames "admin " and "admin" are identical from a MySQL perspective. You may find more informations the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/char.html). This is known as **"SQL Truncation"**.
-If the backend DBMS is MySQL, which is usually the case here, we should be able to leverage this attack to sign-up as admin@book.htb. Send another request from the sign up form and intercept it.
+I didn't know much about this when I rooted the machine and when I first wrote this walkthrough, but it seems that trailing spaces are ignored during database operations. This means that the usernames "admin " and "admin" are identical from a MySQL perspective. You may find more informations the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/char.html). This is known as **"SQL Truncation"**.   
+If the backend DBMS is MySQL, which is usually the case here, we should be able to leverage this attack to sign-up as admin@book.htb. Send another request from the sign up form and intercept it.    
 
-The email is limited to 20 characters. We may try to register an account beginning with “admin@book.htb”, then adding spaces until the 20th character, and finally one more character, e.g. "1".   
-Doing so, we may obtain another admin account that the site will consider as being the admin account “admin@book.htb” without flagging it during the registration as alreading existing.    
-Let's give it a try.   
+The email is limited to 20 characters. We may try to register an account beginning with “admin@book.htb”, then adding spaces until the 20th character, and finally one more character, e.g. "1".     
+Doing so, we may obtain another admin account that the site will consider as being the admin account “admin@book.htb” without flagging it during the registration as alreading existing.     
+
+Let's give it a try.    
 
 If we do it directly in the form on the web site, it refuses this e-mail address and we can not validate the account. Actually, space chars are not accepted here, but we can try to run the query from Burp.   
 From Burp, we create an account “admin” with the email address **“admin@book.htb      1”**. As the 1 is the 21<sup>st</sup> character, it is not taken into account and our account is validated. 
