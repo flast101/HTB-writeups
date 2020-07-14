@@ -558,7 +558,7 @@ reader@book:~$ chmod +x payload logrotten
 
 On our Kali machine we set up a listener with **`# nc -nlvp 4444`** before we run the exploit.
 
-At the same time we run it, we want the log rotate to trigger our exploit. After testing, wa can notice that there is _**access.log**_ file, and we know that each minute it is backed up and replace by a new and empty file. We actually just want the _**access.log**_ file to not be empty. A way to do this is to generate and write anough random data in the log file _**access.log**_. Another way is **`cp backups/access.log.1 backups/access.log`**.
+At the same time we run it, we want the log rotate to trigger our exploit. After testing, wa can notice that there is _**access.log**_ file, and we know that each minute it is backed up and replace by a new and empty file. We actually just want the _**access.log**_ file to not be empty. A way to do this is to generate and write enough random data in the log file _**access.log**_. Another way can be **`cp backups/access.log.1 backups/access.log`**.
 
 Let's try it: 
 
