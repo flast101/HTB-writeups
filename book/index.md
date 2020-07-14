@@ -24,7 +24,7 @@ Writeup: 11 July 2020
 4.1- Post-Compromise Enumeration     
 4.2- Deeper Investigation    
 4.3- Post-Compromise Exploitation    
-4.4- Reverse shell Stabilisation
+4.4- Reverse Shell Stabilization
 
 * * *
 ## 2- Enumeration
@@ -572,10 +572,10 @@ access.log  access.log-2020071415.backup  apport_completion  cloud-init  git-pro
 
 It takes several trials before it works and the shell is unstable but it finally works.
 
-
 ![root-txt](images/root-txt.png "root-txt")
 
-### 4.4- Reverse shell Stabilisation
+
+### 4.4- Reverse Shell Stabilization
 
 We got _**root.txt**_ but our reverse shell is dying. We may want to get a stable reverse shell. The most efficient solution here is to migrate the process on which the shell is running. We could do this by starting another reverse shell from the brief root shell we have, but after some tests, a simple `# bash -i` is enough: 
 
@@ -585,7 +585,7 @@ There is another solution which personally I don't like very much. Now that we a
 
 What I dont like whit this solution is that there could not be a _**.ssh**_ directory with a ssh private key here. This solution won't work in such a case.
 
-The last solution would be to **`cat /etc/shadow`** to get the root password hash and then try to crack it with **`hashcat`**. I didn't try but it is sha512crypt (**`hashcat -m 1800`**), so you might need a shit load of luck if the password is not weak...
+The last solution would be to **`cat /etc/shadow`** to get the root password hash and then try to crack it with **`hashcat`**. I didn't try it but the hash is sha512crypt (**`hashcat -m 1800`**), so you might need a shit load of luck if the password is not weak...
 
 Happy Hacking ! 
 
