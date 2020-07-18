@@ -20,6 +20,7 @@ Writeup: 18 July 2020
 3.2- [New Account Enumeration](https://github.com/flast101/HTB-writeups/tree/master/sauna#32--new-account-enumeration)   
 3.3- [Post-Compromise Exploitation](https://github.com/flast101/HTB-writeups/tree/master/sauna#33--post-compromise-exploitation)   
 
+
 * * *
 ## 2- Enumeration
 ### 2.1- Nmap Scan
@@ -146,7 +147,7 @@ Running **`gobuster`** with `# gobuster dir -u http://10.10.10.175:80/ -w /usr/
 /single.html (Status: 200) [Size: 38056]
 ~~~
 
-There is nt much to find there. Howerver, we find a page bout the team on [http://10.10.10.175/about.html](http://10.10.10.175/about.html): 
+There is not much to find there. However, we find a page about the company's team on [http://10.10.10.175/about.html](http://10.10.10.175/about.html): 
 
 ![about](images/about.png "about")
 
@@ -183,9 +184,20 @@ result: 0 Success
 ~~~
 
 
-Let's try to find more information about users if we can...
+Let's try to find more information about users if we can...    
 
-If we try with **`enum4linux`**, we don't find more information about users. Another idea is to try **[Impacket](https://github.com/SecureAuthCorp/impacket)** using **`GetADUsers.py`** against users but don't find antyhing more here:
+First thing we can try is the command `**enumdomers`** with **`rpcclient`**. But we have to try a null authentication and we don't have any information from our **`nmap`** scan which could make think it wiil work:
+~~~
+root@linux:~/Documents/results/10.10.10.175# rpcclient -U "" 10.10.10.175
+Enter WORKGROUP\'s password: 
+rpcclient $> enumdomusers
+result was NT_STATUS_ACCESS_DENIED
+rpcclient $> querydominfo
+result was NT_STATUS_ACCESS_DENIED
+~~~
+Indee, the access is denied... If we try with **`enum4linux`**, we don't find more information about users either. 
+
+Another idea is to try **[Impacket](https://github.com/SecureAuthCorp/impacket)** using **`GetADUsers.py`** against users but don't find antyhing more here:
 
 ~~~
 root@kali:~# GetADUsers.py -all -no-pass -dc-ip 10.10.10.175 EGOTISTICAL-BANK.LOCAL/
@@ -346,10 +358,40 @@ USER CLAIMS INFORMATION
 User claims unknown.
 
 Kerberos support for Dynamic Access Control on this device has been disabled.
+~~~
+
+Looking for other users we can find a few:
+~~~
+*Evil-WinRM* PS C:\Users> net users
+
+User accounts for \\
+
+-------------------------------------------------------------------------------
+Administrator            FSmith                   Guest
+HSmith                   krbtgt                   svc_loanmgr
+The command completed with one or more errors.
+
+*Evil-WinRM* PS C:\Users> dir -force
+
+    Directory: C:\Users
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        1/25/2020   1:05 PM                Administrator
+d--hsl        9/15/2018  12:28 AM                All Users
+d-rh--        1/22/2020   9:31 PM                Default
+d--hsl        9/15/2018  12:28 AM                Default User
+d-----        1/23/2020   9:52 AM                FSmith
+d-r---        1/22/2020   9:32 PM                Public
+d-----        1/24/2020   4:05 PM                svc_loanmgr
+-a-hs-        9/15/2018  12:16 AM            174 desktop.ini
 
 ~~~
 
-Let's get a broader enumeration using tools such as **`WinPEAS`** and **`BloodHound`**.   
+Looking around at directories, we can not find anything special.
+
+
+Now, we should do a broader enumeration using tools such as **`WinPEAS`** and **`BloodHound`**.   
 [**WinPEAS**](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS) is a well known anumeration tool.   
 [**BloodHound**](https://github.com/BloodHoundAD/BloodHound) BloodHound uses graph theory to reveal the hidden and often unintended relationships within an Active Directory environment. Attackers can use BloodHound to easily identify highly complex attack paths that would otherwise be impossible to quickly identify. Defenders can use BloodHound to identify and eliminate those same attack paths. Both blue and red teams can use BloodHound to easily gain a deeper understanding of privilege relationships in an Active Directory environment.
 
@@ -467,3 +509,8 @@ egotisticalbank\administrator
 
 
 ![root-txt](images/root-txt.png "root-txt")     
+
+Happy Hacking ! :smiley:
+
+[<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">](https://www.hackthebox.eu/profile/249498)
+
