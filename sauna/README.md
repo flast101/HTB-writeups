@@ -3,8 +3,8 @@
 ## 1- Overview
 
 [![card](images/card.png "Sauna")](https://www.hackthebox.eu/home/machines/profile/220)      
-Retire: 30 May 2020     
-Writeup: 31 May 2020      
+Retire: 18 July 2020     
+Writeup: 18 July 2020      
 
 ### Summary
 
