@@ -195,7 +195,7 @@ result was NT_STATUS_ACCESS_DENIED
 rpcclient $> querydominfo
 result was NT_STATUS_ACCESS_DENIED
 ~~~
-Indeed, the access is denied... If we try with **`enum4linux`**, we don't find more information about users either. 
+Indeed, the access is denied... If we try with **`enum4linux`**, we don't find more information about users either, and **`crackmapexec`** does not give a better result.  
 
 Another idea is to try **[Impacket](https://github.com/SecureAuthCorp/impacket)** using **`GetADUsers.py`** against users but don't find antyhing more here:
 
