@@ -187,7 +187,7 @@ result: 0 Success
 
 Let's try to find more information about users if we can...    
 
-First thing we can try is the command `**enumdomers`** with **`rpcclient`**. But we have to try a null authentication and we don't have any information from our **`nmap`** scan which could make think it wiil work:
+First thing we can try is the command `**enumdomers`** with **`rpcclient`**. But we have to try a null authentication and we don't have any information from our **`nmap`** scan which could make think it will work:
 ~~~
 root@linux:~/Documents/results/10.10.10.175# rpcclient -U "" 10.10.10.175
 Enter WORKGROUP\'s password: 
@@ -196,7 +196,7 @@ result was NT_STATUS_ACCESS_DENIED
 rpcclient $> querydominfo
 result was NT_STATUS_ACCESS_DENIED
 ~~~
-Indee, the access is denied... If we try with **`enum4linux`**, we don't find more information about users either. 
+Indeed, the access is denied... If we try with **`enum4linux`**, we don't find more information about users either. 
 
 Another idea is to try **[Impacket](https://github.com/SecureAuthCorp/impacket)** using **`GetADUsers.py`** against users but don't find antyhing more here:
 
@@ -393,7 +393,7 @@ Looking around at directories, we can not find anything special.
 
 
 Now, we should do a broader enumeration using tools such as **`WinPEAS`** and **`BloodHound`**.   
-[**WinPEAS**](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS) is a well known anumeration tool.   
+[**WinPEAS**](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS) is a well known enumeration tool.   
 [**BloodHound**](https://github.com/BloodHoundAD/BloodHound) BloodHound uses graph theory to reveal the hidden and often unintended relationships within an Active Directory environment. Attackers can use BloodHound to easily identify highly complex attack paths that would otherwise be impossible to quickly identify. Defenders can use BloodHound to identify and eliminate those same attack paths. Both blue and red teams can use BloodHound to easily gain a deeper understanding of privilege relationships in an Active Directory environment.
 
 We set up a web server on our kali machine:
