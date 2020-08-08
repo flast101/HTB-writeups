@@ -16,7 +16,7 @@ Writeup: 11 July 2020
 2.2- Web Site Discovery   
 
 **3- Exploitation**    
-3.1- Exploitating Registering Page   
+3.1- Exploiting Registering Page   
 3.2- Web Site Vulnerability   
 3.3- Getting RCE   
 
@@ -170,7 +170,7 @@ It is interesting to see that the name and email fields are limited in size.
 
 * * *
 ## 3- Exploitation
-### 3.1- Exploitating Registering Page
+### 3.1- Exploiting Registering Page
 
 As we know from the contact page that there is an account “admin@book.htb”, we can guess it is an admin account and the first thing we want to try is registering this same account again, but with new creds that we choose. Wrong number, it fails: 
 
