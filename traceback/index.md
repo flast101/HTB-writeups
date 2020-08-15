@@ -20,7 +20,7 @@ Writeup: 15 August 2020
 2.3- Foothold   
 
 **3- Privilege Escalation**   
-3.1- Lua-ctivities
+3.1- Lua-ctivities    
 3.2- Getting user.txt   
 3.3- Post-Compromise Enumeration   
 3.4- The Message Of The Day   
