@@ -477,7 +477,8 @@ sysadmin@traceback:~$ echo 'cat /home/sysadmin/newroot >> /etc/passwd' >> /etc/u
 ~~~
 And finally, we immediately login as sysadmin to make the script be executed:
 
-Here is the result:
+Here is the result:   
+
 ![finalroot.png](images/finalroot.png)
 
 We rooted the box ! **I love it when a plan comes together. ;-))**
