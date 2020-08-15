@@ -1,6 +1,8 @@
 _[<-- Back](https://flast101.github.io/HTB-writeups)_
 
 # Resolute
+
+* * * 
 ## 1- Overview
 
 [![card](images/card.png "Resolute")](https://www.hackthebox.eu/home/machines/profile/220)      
