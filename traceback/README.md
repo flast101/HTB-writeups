@@ -479,3 +479,9 @@ Here is the result:
 ![finalroot.png](images/finalroot.png)
 
 We rooted the box ! **I love it when a plan comes together. ;-))**
+
+
+
+
+[<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">](https://www.hackthebox.eu/profile/249498)
+
