@@ -96,7 +96,7 @@ Let's have a look on the web site:
 
 ![website.png](images/website.png)
 
-Ohmy ! You're such a bad boy **Xh4H**, but not a stealthy one. There is the message "<!--Some of the best web shells that you might need ;)-->" in the source code and if we google this name, we find several things:
+Ohmy ! You're such a bad boy **Xh4H**, but not a stealthy one. There is the message "Some of the best web shells that you might need ;)" in the source code and if we google this name, we find several things:
 
 
 
