@@ -97,7 +97,7 @@ Let's have a look on the web site:
 
 ![website.png](images/website.png)
 
-Ohmy ! You're such a bad boy **Xh4H**, but not a stealthy one. If we google this name, we find several things:
+Ohmy ! You're such a bad boy **Xh4H**, but not a stealthy one. There is the message "<!--Some of the best web shells that you might need ;)-->" in the source code and if we google this name, we find several things:
 
 
 
@@ -108,7 +108,7 @@ Looking at the Tweeter account, we have to pay attention to what happened when t
 
 ![twitter.png](images/twitter.png)
 
-The only interesting tweet is the last one. A webshell is not something that a Hack The Box engineer (see his [Linkedin profile](https://www.linkedin.com/in/juanjimenezbleye/), which address is on the site [https://www.xh4h.com](https://www.xh4h.com)) is interested in and he wrote on the webpage that he "left a backdoor for all the net". There must be something with this.
+The only interesting tweet is the last one. A web shell is not something that a Hack The Box engineer (see his [Linkedin profile](https://www.linkedin.com/in/juanjimenezbleye/), which address is on the site [https://www.xh4h.com](https://www.xh4h.com)) is interested in, he wrote on the webpage that he "left a backdoor for all the net" and it refers to the message in the source code. There must be something with this.
 
 On the Github repo, we find:
 
@@ -137,7 +137,7 @@ Indeed, we just have to try them one by one to find that smevk.php (SmEvK v3) is
 
 ![smevkmain.png](images/smevkmain.png)
 
-Now, as this is a web shell, it is easy to get a reverse shell. The "Upload file" field seems appropriate.
+Now, as this is a web shell, it is easy to get a reverse shell. One of the ways to get it: the "Upload file" field seems appropriate.
 
 Although some other reverse shells would work (check out my [cheat sheet](https://flast101.github.io/reverse-shell-cheatsheet/) for more reverse shells), we choose to use the file **[php-reverse-shell.php](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)** that you can also download [here](http://pentestmonkey.net/tools/php-reverse-shell/php-reverse-shell-1.0.tar.gz).
 
@@ -406,7 +406,7 @@ We just need to find a way to login using SSH and we are done!
 ### 3.5 Getting root.txt
 
 The SSH login part is easy as we have acces to our ***.ssh/authorized_keys*** file.
-Let's add our public key corresponding to our attacking machine private key to the ***.ssh/authorized_keys*** file.
+Let's add our public key corresponding to our attacking machine private key (or generate a pair of keys with **`sshkeygen`**) to the ***.ssh/authorized_keys*** file.
 
 On our machine: **`# cat .ssh/id_rsa.pub`**
 On the target: **`$ echo "cat_id_rsa_result" >> /home/sysadmin/.ssh/authprized_keys`**
@@ -452,10 +452,11 @@ Very good! We got the root.txt flag! But is it enough for you ? For me it is not
 
 We have several options here. The most common are:
 
+- a reverse shell,
 - insert a public key in the ***authorized_keys*** file in the ***/root/.ssh*** directory,
 - create a new root user by adding it in the ***/etc/passwd*** file.
 
-As we just used the first option in the previous chapter, let's try the second one.
+The first one is very common and as we just used the second option in the previous chapter, let's try the third one.
 
 We will create a user **"newroot"** with the password **"newrootpass"**, using md5crypt algorithm to hash the password.
 
