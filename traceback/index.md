@@ -12,18 +12,18 @@ Writeup: 15 August 2020
 
 ### Summary
 
-**2- Enumeration**
-2.1- Nmap Scan
-2.2- OSINT
-2.3- Foothold
+**2- Enumeration**   
+2.1- Nmap Scan   
+2.2- OSINT   
+2.3- Foothold   
 
-**3- Privilege Escalation**
+**3- Privilege Escalation**   
 3.1- Lua-ctivities
-3.2- Getting user.txt
-3.3- Post-Compromise Enumeration
-3.4- The Message Of The Day
-3.5- Getting root.txt
-3.6- Root Privilege Escalation
+3.2- Getting user.txt   
+3.3- Post-Compromise Enumeration   
+3.4- The Message Of The Day   
+3.5- Getting root.txt   
+3.6- Root Privilege Escalation   
 
 * * *
 ## 2- Enumeration
