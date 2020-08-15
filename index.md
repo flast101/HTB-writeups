@@ -3,6 +3,7 @@ _[<-- Home](https://flast101.github.io)_
 # HTB-writeups
 Here are walkthroughs to root machines on the [HackTheBox](https://www.hackthebox.eu) website, an online platform for learning and teaching cyber security.
 
+- _15 August 2020_: [Traceback](https://flast101.github.io/HTB-writeups/traceback)
 - _18 July 2020_: [Sauna](https://flast101.github.io/HTB-writeups/sauna) 
 - _11 July 2020_: [Book](https://flast101.github.io/HTB-writeups/book) 
 - _20 June 2020_: [ServMon](https://flast101.github.io/HTB-writeups/servmon)  
