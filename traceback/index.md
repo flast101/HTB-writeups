@@ -408,8 +408,8 @@ We just need to find a way to login using SSH and we are done!
 The SSH login part is easy as we have acces to our ***.ssh/authorized_keys*** file.
 Let's add our public key corresponding to our attacking machine private key (or generate a pair of keys with **`ssh-keygen`**) to the ***.ssh/authorized_keys*** file.
 
-On our machine: **`# cat .ssh/id_rsa.pub`**
-On the target: **`$ echo "cat_id_rsa_result" >> /home/sysadmin/.ssh/authprized_keys`**
+On our machine: **`# cat .ssh/id_rsa.pub`**    
+On the target: **`$ echo "cat_id_rsa_result" >> /home/sysadmin/.ssh/authprized_keys`**    
 
 Now let's try to log in:
 ~~~
