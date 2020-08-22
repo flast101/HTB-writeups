@@ -158,7 +158,7 @@ root@kali:~/Documents/results/10.10.10.185/exploit# mv myimage.png myimage.php.p
 
 Now, see the comment section (it does not work if not renamed):
 ~~~
-root@linux:~# exiftool myimage.php.png
+root@kali:~# exiftool myimage.php.png
 ExifTool Version Number         : 12.04
 File Name                       : myimage.php.png
 Directory                       : .
