@@ -2,6 +2,7 @@ _[<-- Back](https://flast101.github.io/HTB-writeups)_
 
 # Magic
 
+* * * 
 ## 1- Overview
 
 ![card.png](images/card.png)
