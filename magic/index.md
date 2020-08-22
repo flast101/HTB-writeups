@@ -7,7 +7,7 @@ _[<-- Back](https://flast101.github.io/HTB-writeups)_
 
 ![card.png](images/card.png)
 
-Retire: 22 August 2020
+Retire: 22 August 2020    
 Writeup: 22 August 2020
 
 ### Summary
