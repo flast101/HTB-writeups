@@ -435,7 +435,4 @@ nt authority\system
 
 ![root.txt](images/rootflag.png "root.txt")
 
-
-Happy Hacking ! :smiley:
-
-[<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">](https://www.hackthebox.eu/profile/249498)
+Be Curious, Learning is Life ! :smiley:
