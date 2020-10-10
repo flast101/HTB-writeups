@@ -440,10 +440,12 @@ However, mine is the one I recommend:
 - Article: [https://flast101.github.io/docker-privesc](https://flast101.github.io/docker-privesc)    
 - Script: [https://github.com/flast101/docker-privesc/blob/master/docker-privesc.sh](https://github.com/flast101/docker-privesc/blob/master/docker-privesc.sh)
 
-Replace alpine with ubuntu and you're done. I forgot to replace it in the line `docker image rm alpine` used to clean the box after exploitation, which gives one error message but it works:
+Replace "alpine" with "ubuntu" and you're done. I forgot to replace it in the line `docker image rm alpine` used to clean the box after exploitation, which gives one error message but it works:
 
 ![roottxt.png](images/roottxt.png)
 
+
+Be Curious, Learning is Life !
 
 _[<-- Back](https://flast101.github.io/HTB-writeups)_
 
