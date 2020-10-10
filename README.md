@@ -13,6 +13,3 @@ Here are walkthroughs to root machines on the [HackTheBox](https://www.hackthebo
    
 
 Be Curious, Learning is Life ! :smiley:
-
-<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">
-
