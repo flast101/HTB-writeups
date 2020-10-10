@@ -293,7 +293,7 @@ We can login as **Administrator**:
 
 ![openemrcalendar.png](images/openemrcalendar.png)
 
-### 3.3- Remote Code Execution
+### 3.3- Remote Code Execution
 
 Now, it's reverse shell time. We can use the exploit we just read. Of course, we have to adapt it a little bit.   
 
