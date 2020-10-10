@@ -12,20 +12,20 @@ Writeup: 10 october 2020
 ### Summary
 
 
-**2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/master/traceback#2--enumeration)**   
-2.1- [Nmap Scan](https://github.com/flast101/HTB-writeups/tree/master/traceback#21--nmap-scan)   
-2.2- [Web Site Discovery](https://github.com/flast101/HTB-writeups/tree/master/traceback#22--web-site-discovery)   
-2.3- [New site](https://github.com/flast101/HTB-writeups/tree/master/traceback#23--new-site)
+**2- [Enumeration](https://github.com/flast101/HTB-writeups/tree/master/cache#2--enumeration)**   
+2.1- [Nmap Scan](https://github.com/flast101/HTB-writeups/tree/master/cache#21--nmap-scan)   
+2.2- [Web Site Discovery](https://github.com/flast101/HTB-writeups/tree/master/cache#22--web-site-discovery)   
+2.3- [New site](https://github.com/flast101/HTB-writeups/tree/master/cache#23--new-site)
 
-**3- [Open EMR](https://github.com/flast101/HTB-writeups/tree/master/traceback#3--privilege-escalation)**   
-3.1- [Discovery](https://github.com/flast101/HTB-writeups/tree/master/traceback#31--discovery)   
-3.2- [SQL Injection](https://github.com/flast101/HTB-writeups/tree/master/traceback#32--sql-injection)   
-3.3- [Remote Code Execution](https://github.com/flast101/HTB-writeups/tree/master/traceback#33--remote-code-execution)   
+**3- [Open EMR](https://github.com/flast101/HTB-writeups/tree/master/cache#3--privilege-escalation)**   
+3.1- [Discovery](https://github.com/flast101/HTB-writeups/tree/master/cache#31--discovery)   
+3.2- [SQL Injection](https://github.com/flast101/HTB-writeups/tree/master/cache#32--sql-injection)   
+3.3- [Remote Code Execution](https://github.com/flast101/HTB-writeups/tree/master/cache#33--remote-code-execution)   
 
 
-**4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/traceback#4--privilege-escalation)**   
-4.1- [Memcache](https://github.com/flast101/HTB-writeups/tree/master/traceback#41--memcache)   
-4.2- [Docker](https://github.com/flast101/HTB-writeups/tree/master/traceback#42--docker)   
+**4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/cache#4--privilege-escalation)**   
+4.1- [Memcache](https://github.com/flast101/HTB-writeups/tree/master/cache#41--memcache)   
+4.2- [Docker](https://github.com/flast101/HTB-writeups/tree/master/cache#42--docker)   
 
 
 
