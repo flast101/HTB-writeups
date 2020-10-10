@@ -363,6 +363,7 @@ And voilà ! We are the champions ;-)
 
 ![root-txt.png](images/root-txt.png)
 
+Be Curious, Learning is Life !
 
 _[<-- Back](https://flast101.github.io/HTB-writeups)_
 
