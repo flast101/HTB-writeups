@@ -25,7 +25,7 @@ Writeup: 10 october 2020
 
 **4- [Privilege Escalation](https://github.com/flast101/HTB-writeups/tree/master/traceback#4--privilege-escalation)**   
 4.1- [Memcache](https://github.com/flast101/HTB-writeups/tree/master/traceback#41--memcache)   
-4.2- [docker](https://github.com/flast101/HTB-writeups/tree/master/traceback#42--docker)   
+4.2- [Docker](https://github.com/flast101/HTB-writeups/tree/master/traceback#42--docker)   
 
 
 
