@@ -585,10 +585,4 @@ What I dont like with this solution is that it happens that there is no _**.ssh*
 
 The last solution would be to **`cat /etc/shadow`** to get the root password hash and then try to crack it with **`hashcat`**. I didn't try it but the hash is sha512crypt (**`hashcat -m 1800`**), so you might need a shit load of luck if the password is not weak...
 
-Happy Hacking ! 
-
-
-Happy Hacking ! :smiley:
-
-[<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">](https://www.hackthebox.eu/profile/249498)
-
+Be Curious, Learning is Life ! :smiley:
