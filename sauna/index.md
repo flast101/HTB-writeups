@@ -514,9 +514,7 @@ egotisticalbank\administrator
 
 ![root-txt](images/root-txt.png "root-txt")     
 
-Happy Hacking ! 
-
-[<img src="http://www.hackthebox.eu/badge/image/249498" alt="Hack The Box">](https://www.hackthebox.eu/profile/249498)
+Be Curious, Learning is Life !
 
 _[<-- Back](https://flast101.github.io/HTB-writeups)_
 
