@@ -226,7 +226,7 @@ We find 2 interesting links:
 OpenEMR < 5.0.1 - (Authenticated) Remote Code Execution: [https://www.exploit-db.com/exploits/45161](https://www.exploit-db.com/exploits/45161).     
 Of course, we need creds to run this exploit but it also gives a [link](https://www.youtube.com/watch?v=DJSQ8Pk_7hc) to a youtube video showing a SQLi exploitation. I had a look at it and it clearly shows where you can perfom the SQLi.
 - OpenEMR Version < 5.0.1 Remote Code execution vulnerability: [https://medium.com/@musyokaian/openemr-version-5-0-1-remote-code-execution-vulnerability-2f8fd8644a69](https://medium.com/@musyokaian/openemr-version-5-0-1-remote-code-execution-vulnerability-2f8fd8644a69).    
-This is truely the better link I found. It confirms you can perform a SQL injection on the page to get credential and then provide a python script to exploitthe remote code execution vylnerability.
+This is truely the better link I found. It confirms you can perform a SQL injection on the page to get credentials and then provide a python script to exploit the remote code execution vulnerability.
 
 First click on Register onthe page [http://hms.htb/portal/](http://hms.htb/portal/). Then, when trying to go to the page http://hms.htb/portal/add_edit_event_user.php?eid=1', we obtain the following result:
 
