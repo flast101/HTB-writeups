@@ -177,7 +177,7 @@ Requests/sec.: 79.22835
 We can add “10.10.10.188 hms.htb” to our /etc/hosts.
 
 * * *
-## 3- Open EMR
+## 3- Open EMR
 ### 3.1- Discovery
 The page of **[http://hms.htb](http://hms.htb)** is redirected to [http://hms.htb/interface/login/login.php?site=default](http://hms.htb/interface/login/login.php?site=default)
 
