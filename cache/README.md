@@ -211,7 +211,7 @@ Nmap done: 1 IP address (1 host up) scanned in 10.07 seconds
 ~~~
 We already knew that a software named OpenEMR is installed and we don't get its version number from `nmap`. OpenEMR is "the most popular open source electronic health records and medical practice management solution."
 
-However, we noticed that the login page mentioned the year 2018 and OpenEMR site has a [release history page](https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#Release_History). It is written that the version 5.0.1 was release on April 23, 2018.
+However, we noticed that the login page mentioned the year 2018 and OpenEMR site has a [release history page](https://www.open-emr.org/wiki/index.php/OpenEMR_Wiki_Home_Page#Release_History). It is written that the version 5.0.1 was released on April 23, 2018.
 
 In addition, if we run gobuster on hms.htb, we find a shit load of uri returning 200. Several of them return the OpenEMR version, confirming it is 5.0.1:
 
