@@ -12,4 +12,4 @@ Here are walkthroughs to root machines on the [HackTheBox](https://www.hackthebo
    
    
 
-Be Curious, Learning is Life ! :smiley:
+Stay curious. :smiley:
