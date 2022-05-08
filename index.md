@@ -12,7 +12,7 @@ Here are walkthroughs to root machines on the [HackTheBox](https://www.hackthebo
 - _13 June 2020_: [Monteverde](https://flast101.github.io/HTB-writeups/monteverde)    
 - _31 May 2020_: [Resolute](https://flast101.github.io/HTB-writeups/resolute)    
 
-Be Curious, Learning is Life !
+Stay curious !
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173692234-1"></script>
